@@ -1,0 +1,592 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    background-color: #fff;
+    color: #333;
+    padding-top: 20vh;
+}
+
+header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    background-color: rgb(255,255,255);
+    width: 100%;
+    z-index: 1000;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 20vh;
+    padding: 0 5%;
+    box-shadow: 0 2px 5px rgba(51, 51, 51, 0.1);
+}
+
+.logo {
+    height: 100px;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    gap: 2rem;
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: #333;
+    font-weight: 600;
+    position: relative;
+    padding: 5px 0;
+    transition: all 0.3s ease;
+}
+
+nav ul li a::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 0%;
+    height: 2px;
+    background-color: #652728;
+    transition: width 0.3s ease;
+}
+
+nav ul li a:hover {
+    color: #652728;
+    transform: scale(1.05);
+}
+
+nav ul li a:hover::after {
+    width: 100%;
+}
+
+.hero {
+    position: relative;
+    height: 70vh;
+    flex-direction: column;
+    background: url('images/direito2.webp') center/cover no-repeat;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    text-shadow: 2px 2px 5px rgba(0,0,0,0.6);
+}
+
+.hero::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(101, 39, 40, 0.4);
+    z-index: 1;
+}
+
+.hero h1 {
+    position: relative;
+    z-index: 2;
+    font-family: 'Times New Roman', Times, serif;
+    font-size: 3rem;
+    max-width: 800px;
+    text-align: center;
+    border-radius: 8px;
+}
+
+.hero p {
+    position: relative;
+    z-index: 2;
+    font-size: 1.2rem;
+    max-width: 800px;
+    text-align: center;
+    font-style: italic;
+    border-radius: 8px;
+}
+
+section {
+    padding: 4rem 10%;
+}
+
+.direito-medico {
+    position: relative;
+    height: 110vh;
+    margin-top: 20vh;
+    padding-bottom: 10vh;
+    width: 100%;
+    overflow: hidden;
+}
+
+.direito-medico img {
+    width: 80%;
+    height: 80%;
+    object-fit: cover;
+    position: absolute;
+    right: 0;
+    bottom: 0;
+}
+
+.direito-medico .overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+}
+
+.direito-medico .content {
+    position: absolute;
+    top: 50%;
+    left: 10%;
+    transform: translateY(-50%);
+    width: 30%;
+    height: 110vh;
+    background: #fff;
+    padding: 2rem;
+    z-index: 2;
+    display: flex;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+    flex-direction: column;
+    justify-content: flex-start;
+}
+
+.direito-medico .content .title-container {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    margin-bottom: 1.5rem;
+}
+
+.direito-medico .content .health-icon {
+    font-size: 3rem;
+    color: #652728;
+}
+
+.direito-medico .content h2 {
+    font-family: 'Times New Roman', Times, serif;
+    font-size: 2.5rem;
+    color: #652728;
+    margin-bottom: 1rem;
+}
+
+.direito-medico .content p {
+    font-size: 1rem;
+    color: #333;
+    line-height: 1.6;
+    margin-bottom: 1rem;
+}
+
+.direito-medico .content .trabalhe-comigo {
+    position: absolute;
+    bottom: 2rem;
+    width: 200px;
+    left: 2rem;
+    border: 2px solid #652728;
+    padding: 8px 12px;
+    color: #652728;
+    font-size: 1rem;
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    background: transparent;
+    z-index: 1;
+}
+
+.direito-medico .content .trabalhe-comigo::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 0;
+    height: 100%;
+    background: #652728;
+    transition: width 0.3s ease;
+    z-index: -1;
+}
+
+.direito-medico .content .trabalhe-comigo:hover::before {
+    width: 100%;
+}
+
+.direito-medico .content .trabalhe-comigo:hover {
+    color: #fff;
+}
+
+.direito-medico .content .trabalhe-comigo:hover i {
+    color: #fff;
+}
+
+.direito-medico .content .trabalhe-comigo i {
+    font-size: 1rem;
+    transition: color 0.3s ease;
+}
+
+.areas-destaque {
+    padding: 4rem 10%;
+    background-color: #652728;
+    color: #fff;
+}
+
+.titulos {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 2rem;
+}
+
+.titulo-item {
+    flex: 1;
+    text-align: center;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.titulo-item h2 {
+    font-size: 1.8rem;
+    color: #b0b0b0;
+    font-family: 'Times New Roman', Times, serif;
+    margin-bottom: 0.5rem;
+}
+
+.titulo-item.active h2 {
+    color: #fff;
+}
+
+.titulo-item:hover h2 {
+    color: #fff;
+}
+
+.progress-bar {
+    height: 2px;
+    background-color: #652728;
+    border-radius: 2px;
+    width: 90%;
+    margin: 0 auto;
+    overflow: hidden;
+}
+
+.titulo-item:hover .progress-bar {
+    background-color: #b0b0b0;
+}
+
+.progress-bar.active::before {
+    content: '';
+    display: block;
+    width: 0;
+    height: 100%;
+    background-color: #fff;
+    animation: fillBar 10s linear forwards;
+}
+
+.progress-bar.active {
+    background-color: #b0b0b0;
+}
+
+@keyframes fillBar {
+    to {
+        width: 100%;
+    }
+}
+
+.areas-content {
+    display: flex;
+    gap: 2rem;
+    align-items: stretch;
+}
+
+.icones {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.icone-texto {
+    display: none;
+}
+
+.icone-texto.active {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+.icone-texto .item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.5rem;
+    justify-content: center;
+    border-radius: 10px;
+    border: solid 2px #fff;
+    padding: 1.5rem;
+    text-align: center;
+    width: 250px;
+    height: 150px;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+    position: relative;
+    overflow: hidden;
+    transition: box-shadow 0.3s ease, background-color 0.3s ease;
+}
+
+.icone-texto .item i,
+.icone-texto .item span {
+    transform: translateX(100%);
+    opacity: 0;
+    transition: transform 0.3s ease, opacity 0.3s ease;
+}
+
+.icone-texto.active .item i,
+.icone-texto.active .item span {
+    animation: slideInFromRight 0.5s ease forwards;
+}
+
+@keyframes slideInFromRight {
+    0% {
+        transform: translateX(100%);
+        opacity: 0;
+    }
+    100% {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
+.item:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+    background-color: #652728;
+}
+
+.item:hover i, .item:hover span {
+    color: #fff;
+}
+
+.icone-texto i {
+    font-size: 2rem;
+    color: #fff;
+}
+
+.icone-texto span {
+    font-size: 1.1rem;
+    max-width: 250px;
+    color: #fff;
+    line-height: 1.4;
+    text-align: center;
+}
+
+.imagem-container {
+    flex: 2;
+    position: relative;
+    height: 350px;
+    border: solid #fff 2px;
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+.imagem-modelo {
+    position: absolute;
+    top: 0;
+    left: 0;
+    border-radius: 8px;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    transition: opacity 0.5s ease;
+    pointer-events: none;
+}
+
+.imagem-modelo.active {
+    opacity: 1;
+    pointer-events: auto;
+}
+
+.imagem-modelo img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 8px;
+    transform: scale(1.1);
+    transition: transform 0.3s ease;
+}
+
+.imagem-modelo:hover img {
+    transform: scale(1);
+}
+
+.imagem-modelo .overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(to bottom, rgba(101, 39, 40, 0.2) 0%, rgba(101, 39, 40, 0.9) 80%);
+    border-radius: 8px;
+    transition: background 0.3s ease;
+}
+
+.imagem-modelo:hover .overlay {
+    background: linear-gradient(to bottom, rgba(101, 39, 40, 0.3) 0%, rgba(101, 39, 40, 0.9) 60%);
+}
+
+.imagem-modelo p {
+    position: absolute;
+    bottom: 1rem;
+    left: 1rem;
+    color: #fff;
+    font-size: 1.2rem;
+    padding-right: 1rem;
+    line-height: 1.2;
+    text-shadow: 1px 1px 2px rgba(0,0,0,0.5);
+    transform: translateX(100%);
+    opacity: 0;
+    transition: bottom 0.3s ease, transform 0.3s ease, opacity 0.3s ease;
+}
+
+.imagem-modelo.active p {
+    animation: slideInFromRight 0.5s ease forwards;
+}
+
+.imagem-modelo:hover p {
+    bottom: 5rem;
+}
+
+.imagem-modelo .trabalhe-comigo {
+    position: absolute;
+    bottom: 4rem;
+    width: 200px;
+    left: 1rem;
+    border: 2px solid #fff;
+    padding: 8px 12px;
+    color: #fff;
+    font-size: 1rem;
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    position: relative;
+    z-index: 1;
+}
+
+.imagem-modelo:hover .trabalhe-comigo {
+    opacity: 1;
+}
+
+.imagem-modelo .trabalhe-comigo::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 0;
+    height: 100%;
+    background: #fff;
+    transition: width 0.3s ease;
+    z-index: -1;
+}
+
+.imagem-modelo .trabalhe-comigo:hover::before {
+    width: 100%;
+}
+
+.imagem-modelo .trabalhe-comigo:hover {
+    color: #652728;
+}
+
+.imagem-modelo .trabalhe-comigo:hover i {
+    color: #652728;
+}
+
+.imagem-modelo .trabalhe-comigo i {
+    font-size: 1rem;
+    transition: color 0.3s ease;
+}
+
+.container {
+    background-color: #652728;
+    border-radius: 20px;
+    padding: 5%;
+}
+
+.container p {
+    margin-bottom: 20px;
+}
+
+.contato {
+    background-color: #fff;
+    padding: 4rem 10%;
+    text-align: center;
+}
+
+.contato .logo {
+    height: 100px;
+    margin-bottom: 2rem;
+}
+
+.contato h2 {
+    font-size: 1.8rem;
+    font-weight: 600;
+    color: #652728;
+    margin-bottom: 0.5rem;
+}
+
+.contato .oab {
+    font-size: 1.1rem;
+    color: #333;
+    margin-bottom: 2rem;
+}
+
+.contato-info {
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+    flex-wrap: wrap;
+}
+
+.contato-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 1rem;
+    max-width: 300px;
+    text-align: left;
+}
+
+.contato-item i {
+    font-size: 1.5rem;
+    color: #652728;
+    margin-top: 0.2rem;
+}
+
+.contato-item p {
+    font-size: 1rem;
+    color: #333;
+    line-height: 1.5;
+    margin: 0;
+}
+
+.contato-item p strong {
+    color: #652728;
+}
+
+.contato-item a {
+    color: #652728;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.contato-item a:hover {
+    color: #4a1d1e;
+}
+
+footer {
+    text-align: center;
+    padding: 2rem;
+    background-color: #652728;
+    color: #fff;
+}

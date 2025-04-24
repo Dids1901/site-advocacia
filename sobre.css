@@ -1,0 +1,311 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Poppins', sans-serif;
+  background-color: #fff;
+  color: #333;
+  padding-top: 20vh;
+}
+
+header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  background-color: rgb(255,255,255);
+  width: 100%;
+  z-index: 1000;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 20vh;
+  padding: 0 5%;
+  box-shadow: 0 2px 5px rgba(51, 51, 51, 0.1);
+}
+
+.logo {
+  height: 100px;
+}
+
+nav ul {
+  list-style: none;
+  display: flex;
+  gap: 2rem;
+}
+
+nav ul li a {
+  text-decoration: none;
+  color: #333;
+  font-weight: 600;
+  position: relative;
+  padding: 5px 0;
+  transition: all 0.3s ease;
+}
+
+nav ul li a::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 0%;
+  height: 2px;
+  background-color: #652728;
+  transition: width 0.3s ease;
+}
+
+nav ul li a:hover {
+  color: #652728;
+  transform: scale(1.05);
+}
+
+nav ul li a:hover::after {
+  width: 100%;
+}
+
+.hero {
+  position: relative;
+  height: 70vh;
+  flex-direction: column;
+  background: url('images/direito.jpg') center/cover no-repeat;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  text-shadow: 2px 2px 5px rgba(0,0,0,0.6);
+}
+
+.hero::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(101, 39, 40, 0.4);
+  z-index: 1;
+}
+
+.hero h1 {
+  position: relative;
+  z-index: 2;
+  font-family: 'Times New Roman', Times, serif;
+  font-size: 3rem;
+  max-width: 800px;
+  text-align: center;
+  border-radius: 8px;
+}
+
+.hero p {
+  position: relative;
+  z-index: 2;
+  font-size: 1.2rem;
+  max-width: 800px;
+  text-align: center;
+  font-style: italic;
+  border-radius: 8px;
+}
+
+.destaques {
+  background-color: #fff;
+  padding: 4rem 10%;
+  margin-top: 10vh;
+  display: flex;
+  justify-content: space-between;
+  gap: 2rem;
+  flex-wrap: wrap;
+}
+
+.destaques .bloco {
+  flex: 1;
+  min-width: 250px;
+  text-align: center;
+  padding: 2rem;
+  background-color: #f5f5f5;
+  border-radius: 8px;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+  transition: transform 0.3s ease;
+}
+
+.bloco:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  background-color: #652728;
+}
+
+.bloco i {
+  font-size: 2rem;
+  color: #652728;
+  margin-bottom: 0.5rem;
+}
+
+.destaques .bloco h3 {
+  font-size: 1.5rem;
+  color: #652728;
+  margin-bottom: 1rem;
+}
+
+.destaques .bloco p {
+  font-size: 1rem;
+  color: #333;
+  line-height: 1.5;
+}
+
+.bloco:hover p {
+  color: #fff;
+}
+
+.bloco:hover i {
+  color: #fff;
+}
+
+.bloco:hover h3 {
+  color: #fff;
+}
+
+
+
+.areas h2, .sobre h2, .contato h2 {
+  font-size: 2rem;
+  color: #fff;
+  margin-bottom: 1rem;
+}
+
+.sobre {
+  display: flex;
+  padding: 0 10%;
+  margin-top: 0; /* Ajustado para conectar com #destaques */
+  justify-content: space-between;
+  align-items: flex-start;
+  background-color: #652728;
+  gap: 3rem;
+  position: relative;
+  overflow: hidden;
+}
+
+.sobre::before {
+  content: '';
+  position: absolute;
+  top: -30vh; /* Ajustado para cobrir transição com #destaques */
+  left: 0;
+  width: 100%;
+  height: 40vh;
+  background-color: #fff;
+  transform: skewY(-5deg);
+  z-index: 0;
+}
+
+.sobre-conteudo {
+  flex: 1 1 60%;
+  z-index: 5;
+  padding-top: 25vh;
+}
+
+.sobre p {
+  margin-bottom: 20px;
+  color: #fff;
+}
+
+.imagem-perfil {
+  position: relative;
+  flex: 1 1 2000px;
+  margin-top: 10vh;
+  display: flex;
+  justify-content: flex-end;
+  clip-path: inset(-100px 0 0 0);
+  z-index: 1;
+}
+
+.sobre .perfil {
+  width: 350px;
+  max-width: 100%;
+  border-radius: 8px;
+  display: block;
+}
+
+.sobre .overlay-perfil {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: #652728;
+  opacity: 0.7;
+  border-radius: 8px;
+  z-index: 1;
+}
+
+.contato {
+  background-color: #fff;
+  padding: 4rem 10%;
+  text-align: center;
+}
+
+.contato .logo {
+  height: 100px;
+  margin-bottom: 2rem;
+}
+
+.contato h2 {
+  font-size: 1.8rem;
+  font-weight: 600;
+  color: #652728;
+  margin-bottom: 0.5rem;
+}
+
+.contato .oab {
+  font-size: 1.1rem;
+  color: #333;
+  margin-bottom: 2rem;
+}
+
+.contato-info {
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+  flex-wrap: wrap;
+}
+
+.contato-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 1rem;
+  max-width: 300px;
+  text-align: left;
+}
+
+.contato-item i {
+  font-size: 1.5rem;
+  color: #652728;
+  margin-top: 0.2rem;
+}
+
+.contato-item p {
+  font-size: 1rem;
+  color: #333;
+  line-height: 1.5;
+  margin: 0;
+}
+
+.contato-item p strong {
+  color: #652728;
+}
+
+.contato-item a {
+  color: #652728;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.contato-item a:hover {
+  color: #4a1d1e;
+}
+
+footer {
+  text-align: center;
+  padding: 2rem;
+  background-color: #652728;
+  color: #fff;
+}
