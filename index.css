@@ -38,21 +38,22 @@ header {
 }
 
 .logo {
-  height: 100px;
+  height: 15vh;
 }
 
 nav ul {
   list-style: none;
   display: flex;
-  gap: 2rem;
+  gap: 3vw;
 }
 
 nav ul li a {
   text-decoration: none;
   color: #333;
   font-weight: 600;
+  font-size: 1.3vw;
   position: relative;
-  padding: 5px 0;
+  padding: 1vh 0;
   transition: all 0.3s ease;
 }
 
@@ -62,7 +63,7 @@ nav ul li a::after {
   left: 0;
   bottom: 0;
   width: 0%;
-  height: 2px;
+  height: 0.3vh;
   background-color: #652728;
   transition: width 0.3s ease;
 }
@@ -103,43 +104,38 @@ nav ul li a:hover::after {
   position: relative;
   z-index: 2;
   font-family: 'Times New Roman', Times, serif;
-  font-size: 3rem;
-  max-width: 800px;
+  font-size: 4vw;
+  width: 800px;
   text-align: center;
- 
- 
-  border-radius: 8px;
 }
 
 .hero p {
   position: relative;
   z-index: 2;
-  font-size: 1.2rem;
-  max-width: 800px;
+  font-size: 2vw;
   text-align: center;
   font-style: italic;
-  border-radius: 8px;
 }
 
 section {
-  padding: 4rem 10%;
+  padding: 2vh 10%;
 }
 
 .areas, .sobre, .contato {
-  margin-top: 4rem;
+  margin-top: 15vh;
 }
 
 .areas h2, .sobre h2, .contato h2 {
-  font-size: 2rem;
+  font-size: 2.8vw;
   color: #652728;
-  margin-bottom: 1rem;
+  margin-bottom: 4vh;
 }
 
 .sobre {
   display: flex;
   justify-content: space-between;
   align-items: flex-start;
-  gap: 3rem;
+  gap: 10vw;
   position: relative;
   overflow: hidden;
 }
@@ -151,17 +147,15 @@ section {
 
 .imagem-perfil {
   position: relative;
-  flex: 1 1 1000px;
+  flex: 1 1 85vw;
   display: flex;
   justify-content: flex-end;
-  clip-path: inset(-100px 0 0 0);
   z-index: 1;
 }
 
 .sobre .perfil {
-  width: 350px;
-  max-width: 100%;
-  border-radius: 8px;
+  width: 100%;
+  border-radius: 1vw;
   display: block;
 }
 
@@ -173,7 +167,7 @@ section {
   height: 100%;
   background-color: #652728;
   opacity: 0.3;
-  border-radius: 8px;
+  border-radius: 1vw;
   z-index: 1;
 }
 
@@ -190,9 +184,9 @@ section {
   align-items: center;
   
   text-align: center;
-  padding: 0.5rem;
-  border-bottom-left-radius: 8px;
-  border-bottom-right-radius: 8px;
+  padding: 1vw;
+  border-bottom-left-radius: 1vw;
+  border-bottom-right-radius: 1vw;
   z-index: 2;
   transition: height 0.3s ease, background-color 0.3s ease;
 }
@@ -206,14 +200,14 @@ section {
 }
 
 .perfil-text h3 {
-  font-size: 1.2rem;
+  font-size: 1.7vw;
   color: #652728;
   margin: 0;
   font-weight: 600;
 }
 
 .perfil-text p {
-  font-size: 0.9rem;
+  font-size: 1.2vw;
   color: #333;
   margin: 0;
 }
@@ -221,11 +215,11 @@ section {
 .imagem-perfil:hover .perfil-text {
   height: 100%; /* Expande para cima */
   background-color: rgba(101, 39, 40, 0.5);
-  border-radius: 8px;
+  border-radius: 1vw;
 }
 
 .imagem-perfil:hover .perfil-text-content {
-  transform: translateY(-10px); /* Textos sobem */
+  transform: translateY(-2vh); /* Textos sobem */
 }
 
 .imagem-perfil:hover .perfil-text h3,
@@ -235,15 +229,15 @@ section {
 
 .conhecer-btn {
   position: relative; /* Para posicionar :before */
-  font-size: 0.9rem;
+  font-size: 1.2vw;
   color: #fff;
   border: 2px solid #fff;
-  padding: 5px;
+  padding: 0.5vw;
   text-decoration: none;
   font-weight: 600;
   cursor: pointer;
   opacity: 0;
-  transform: translateY(20px);
+  transform: translateY(2vw);
   max-height: 0;
   overflow: hidden;
   transition: opacity 0.3s ease, transform 0.3s ease, max-height 0.3s ease, color 0.3s ease;
@@ -262,8 +256,8 @@ section {
 }
 
 .conhecer-btn i {
-  margin-left: 0.5rem;
-  font-size: 0.8rem;
+  margin-left: 0.8vw;
+  font-size: 1.2vw;
 }
 
 .imagem-perfil:hover .conhecer-btn {
@@ -286,8 +280,8 @@ section {
 
 .destaques {
   display: flex;
-  gap: 2rem;
-  margin-top: 2rem;
+  gap: 3vw;
+  margin-top: 8vh;
   flex-wrap: wrap;
 }
 
@@ -297,28 +291,29 @@ section {
   align-items: center;
   justify-content: center;
   background-color: #f5f5f5;
-  border-radius: 8px;
-  padding: 1.5rem;
+  border-radius: 1vw;
+  padding: 2vw;
   text-align: center;
-  width: 180px;
+  width: 13vw;
   box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
   transition: transform 0.3s ease, box-shadow 0.3s ease, background-color 0.3s ease;
 }
 
 .bloco:hover {
-  transform: translateY(-5px);
+  transform: translateY(-1vh);
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
   background-color: #652728;
 }
 
 .bloco i {
-  font-size: 2rem;
+  font-size: 3vw;
   color: #652728;
-  margin-bottom: 0.5rem;
+  margin-bottom: 2vh;
 }
 
 .bloco:hover p {
   color: #fff;
+  font-style: italic;
 }
 
 .bloco:hover i {
@@ -326,14 +321,15 @@ section {
 }
 
 .bloco p {
-  font-size: 1rem;
+  font-size: 1.3vw;
   font-weight: 500;
+  
   color: #333;
 }
 
 .areas {
   z-index: 2;
-  padding: 4rem 0% 4rem 10%;
+  padding: 15vh 0% 15vh 10%;
   margin-top: -10vh;
   background-color: #652728;
   color: #fff;
@@ -348,7 +344,7 @@ section {
   background-color: #fff;
   display: flex;
   align-items: center;
-  gap: 2rem;
+  gap: 2vw;
   flex-wrap: wrap;
 }
 
@@ -361,7 +357,7 @@ section {
 .container-img {
   width: 100%;
   display: block;
-  border-radius: 8px;
+  border-radius: 1vw;
 }
 
 .image-overlay {
@@ -372,7 +368,7 @@ section {
   height: 100%;
   background-color: #652728;
   opacity: 0.6;
-  border-radius: 8px;
+  border-radius: 1vw;
   z-index: 1;
 }
 
@@ -382,7 +378,7 @@ section {
   left: 50%;
   transform: translate(-50%, -50%);
   color: #fff;
-  font-size: 2rem;
+  font-size: 3vw;
   font-weight: 600;
   font-family: 'Times New Roman', Times, serif;
   text-align: center;
@@ -394,45 +390,40 @@ section {
   flex: 1;
   display: flex;
   flex-direction: column;
-  gap: 1.5rem;
+  gap: 4vh;
   color: #333;
 }
 
-.icons-container {
-  display: flex;
-  gap: 1rem;
-  flex-wrap: wrap;
-}
+
 
 .icon-circle {
   display: flex;
   align-items: center;
   justify-content: center;
-  width: 60px;
-  height: 60px;
+  width: 5vw;
+  height: 5vw;
   background-color: #652728;
   border-radius: 50%;
 }
 
 .health-icon {
-  font-size: 2.5rem;
+  font-size: 3vw;
   color: #fff;
 }
 
 .content-right p {
-  font-size: 1rem;
-  line-height: 1.5;
+  font-size: 1.4vw;
 }
 
 .ver-mais-btn {
   display: inline-block;
-  padding: 0.8rem 1.5rem;
+  padding: 1vw 1.5vw;
   background-color: #652728;
   color: #fff;
   text-decoration: none;
-  font-size: 1rem;
+  font-size: 1.4vw;
   font-weight: 500;
-  border-radius: 8px;
+  border-radius: 1vw;
   text-align: center;
   transition: background-color 0.3s ease, transform 0.3s ease;
   align-self: center;
@@ -440,24 +431,24 @@ section {
 
 .ver-mais-btn:hover {
   background-color: #4a1d1e; /* Tom mais escuro de #652728 */
-  transform: translateY(-2px);
+  transform: translateY(-1.5vh);
 }
 
 .areas-grid {
   display: flex;
-  gap: 2rem;
-  margin-top: 2rem;
+  gap: 2vw;
+  margin-top: 8vh;
   flex-wrap: wrap;
 }
 
 .area-item {
   flex: 1;
-  min-width: 200px;
-  height: 400px;
+ 
+  height: 60vh;
   background-size: cover;
   background-position: center;
   position: relative;
-  border-radius: 8px;
+  border-radius: 1vw;
 }
 
 .area-overlay {
@@ -468,16 +459,16 @@ section {
   height: 100%;
   background-color: #652728;
   opacity: 0.6;
-  border-radius: 8px;
+  border-radius: 1vw;
   z-index: 1;
 }
 
 .area-info {
-  width: 200px;
-  height: 220px; /* Aumentado para acomodar ícone e botão */
+  width: 20vw;
+  height: 35vh; /* Aumentado para acomodar ícone e botão */
   background-color: #f7f7f7;
   position: absolute;
-  bottom: -110px; /* Metade da altura (220px / 2) */
+  bottom: -20vh; /* Metade da altura (220px / 2) */
   left: 50%;
   transform: translateX(-50%);
   display: flex;
@@ -485,8 +476,8 @@ section {
   justify-content: center;
   align-items: center;
   text-align: center;
-  padding: 1rem;
-  border-radius: 8px;
+  padding: 1vw;
+  border-radius: 1vw;
   box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
   z-index: 2;
 }
@@ -495,44 +486,44 @@ section {
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 0.5rem;
+  gap: 1vh;
   transition: transform 0.3s ease;
 }
 
 .area-info h3 {
-  font-size: 1rem;
+  font-size: 1.3vw;
   color: #333;
   margin: 0;
 }
 
 .area-info p {
-  font-size: 0.85rem;
+  font-size: 1.1vw;
   color: #666;
   margin: 0;
   line-height: 1.3;
 }
 
 .area-info i {
-  font-size: 1.5rem;
+  font-size: 2vw;
   color: #652728;
 }
 
 .area-info .ver-mais-btn {
-  padding: 0.6rem 1.2rem;
-  font-size: 0.9rem;
+  padding: 0.8vw 1.2vw;
+  font-size: 1.1vw;
   background-color: #652728;
   color: #fff;
   text-decoration: none;
-  border-radius: 8px;
+  border-radius: 1vw;
   opacity: 0;
-  transform: translateY(20px);
+  transform: translateY(2vh);
   max-height: 0;
   overflow: hidden;
   transition: opacity 0.3s ease, transform 0.3s ease, max-height 0.3s ease;
 }
 
 .area-info:hover .area-content {
-  transform: translateY(-10px);
+  transform: translateY(-2vh);
 }
 
 .area-info:hover .ver-mais-btn {
@@ -543,51 +534,50 @@ section {
 
 .contato {
   background-color: #fff;
-  padding: 4rem 10%;
+  padding: 10vh 10%;
   text-align: center;
 }
 
 .contato .logo {
-  height: 100px;
-  margin-bottom: 2rem;
+  height: 20vh;
+  margin-bottom: 4vh;
 }
 
 .contato h2 {
-  font-size: 1.8rem;
+  font-size: 2.5vw;
   font-weight: 600;
   color: #652728;
-  margin-bottom: 0.5rem;
+  margin-bottom: 2vh;
 }
 
 .contato .oab {
-  font-size: 1.1rem;
+  font-size: 1.8vw;
   color: #333;
-  margin-bottom: 2rem;
+  margin-bottom: 4vh;
 }
 
 .contato-info {
   display: flex;
   justify-content: center;
-  gap: 2rem;
+  gap: 3vw;
   flex-wrap: wrap;
 }
 
 .contato-item {
   display: flex;
   align-items: flex-start;
-  gap: 1rem;
-  max-width: 300px;
+  gap: 1vw;
+  max-width: 27vw;
   text-align: left;
 }
 
 .contato-item i {
-  font-size: 1.5rem;
+  font-size: 2vw;
   color: #652728;
-  margin-top: 0.2rem;
 }
 
 .contato-item p {
-  font-size: 1rem;
+  font-size: 1.2vw;
   color: #333;
   line-height: 1.5;
   margin: 0;
@@ -609,7 +599,7 @@ section {
 
 footer {
   text-align: center;
-  padding: 2rem;
+  padding: 4vh;
   background-color: #652728;
   color: #fff;
 }
