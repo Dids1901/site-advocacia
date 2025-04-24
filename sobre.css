@@ -6,9 +6,20 @@
 
 body {
   font-family: 'Poppins', sans-serif;
-  background-color: #fff;
+  background-color: #652728;
   color: #333;
   padding-top: 20vh;
+}
+body::before {
+  content: '';
+  position: absolute;
+  top: 0; /* Será definido via JavaScript */
+  left: 0;
+  width: 100%;
+  height: 100%;
+  top: var(--background-top, 50%);
+  background-color: #fff;
+  z-index: -1;
 }
 
 header {
@@ -27,21 +38,22 @@ header {
 }
 
 .logo {
-  height: 100px;
+  height: 15vh;
 }
 
 nav ul {
   list-style: none;
   display: flex;
-  gap: 2rem;
+  gap: 3vw;
 }
 
 nav ul li a {
   text-decoration: none;
   color: #333;
   font-weight: 600;
+  font-size: 1.3vw;
   position: relative;
-  padding: 5px 0;
+  padding: 1vh 0;
   transition: all 0.3s ease;
 }
 
@@ -51,7 +63,7 @@ nav ul li a::after {
   left: 0;
   bottom: 0;
   width: 0%;
-  height: 2px;
+  height: 0.3vh;
   background-color: #652728;
   transition: width 0.3s ease;
 }
@@ -92,63 +104,76 @@ nav ul li a:hover::after {
   position: relative;
   z-index: 2;
   font-family: 'Times New Roman', Times, serif;
-  font-size: 3rem;
-  max-width: 800px;
+  font-size: 4vw;
   text-align: center;
-  border-radius: 8px;
 }
 
 .hero p {
   position: relative;
   z-index: 2;
-  font-size: 1.2rem;
-  max-width: 800px;
+  font-size: 2vw;
   text-align: center;
   font-style: italic;
-  border-radius: 8px;
+}
+
+section {
+  padding: 2vh 10%;
 }
 
 .destaques {
   background-color: #fff;
-  padding: 4rem 10%;
+  padding: 5vh 10%;
   margin-top: 10vh;
   display: flex;
   justify-content: space-between;
-  gap: 2rem;
+  gap: 4vh;
   flex-wrap: wrap;
 }
 
+.destaques h2 {
+  font-size: 3vw;
+  font-family: 'Times New Roman', Times, serif;
+  color: #652728;
+}
+
+.blocos {
+  flex-direction: row;
+  display: flex;
+  gap: 3vw;
+}
+
 .destaques .bloco {
-  flex: 1;
-  min-width: 250px;
+
+  
   text-align: center;
-  padding: 2rem;
+  padding: 2vw;
   background-color: #f5f5f5;
-  border-radius: 8px;
+  border-radius: 1vw;
   box-shadow: 0 2px 5px rgba(0,0,0,0.1);
   transition: transform 0.3s ease;
 }
 
 .bloco:hover {
-  transform: translateY(-5px);
+  transform: translateY(-2vh);
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
   background-color: #652728;
+  font-style: italic;
 }
 
 .bloco i {
-  font-size: 2rem;
+  font-size: 3vw;
   color: #652728;
-  margin-bottom: 0.5rem;
+  margin-bottom: 1vh;
 }
 
 .destaques .bloco h3 {
-  font-size: 1.5rem;
+  font-size: 2vw;
   color: #652728;
-  margin-bottom: 1rem;
+  margin-bottom: 2vh;
 }
 
 .destaques .bloco p {
-  font-size: 1rem;
+  font-size: 1.2vw;
   color: #333;
   line-height: 1.5;
 }
@@ -165,14 +190,6 @@ nav ul li a:hover::after {
   color: #fff;
 }
 
-
-
-.areas h2, .sobre h2, .contato h2 {
-  font-size: 2rem;
-  color: #fff;
-  margin-bottom: 1rem;
-}
-
 .sobre {
   display: flex;
   padding: 0 10%;
@@ -180,7 +197,7 @@ nav ul li a:hover::after {
   justify-content: space-between;
   align-items: flex-start;
   background-color: #652728;
-  gap: 3rem;
+  gap: 5vw;
   position: relative;
   overflow: hidden;
 }
@@ -204,13 +221,13 @@ nav ul li a:hover::after {
 }
 
 .sobre p {
-  margin-bottom: 20px;
+  margin-bottom: 3vh;
   color: #fff;
 }
 
 .imagem-perfil {
   position: relative;
-  flex: 1 1 2000px;
+  flex: 1 1 100vw;
   margin-top: 10vh;
   display: flex;
   justify-content: flex-end;
@@ -219,9 +236,7 @@ nav ul li a:hover::after {
 }
 
 .sobre .perfil {
-  width: 350px;
-  max-width: 100%;
-  border-radius: 8px;
+  width: 25vw;
   display: block;
 }
 
@@ -233,57 +248,56 @@ nav ul li a:hover::after {
   height: 100%;
   background-color: #652728;
   opacity: 0.7;
-  border-radius: 8px;
+  border-radius: 1vw;
   z-index: 1;
 }
 
 .contato {
   background-color: #fff;
-  padding: 4rem 10%;
+  padding: 10vh 10%;
   text-align: center;
 }
 
 .contato .logo {
-  height: 100px;
-  margin-bottom: 2rem;
+  height: 20vh;
+  margin-bottom: 4vh;
 }
 
 .contato h2 {
-  font-size: 1.8rem;
+  font-size: 2.5vw;
   font-weight: 600;
   color: #652728;
-  margin-bottom: 0.5rem;
+  margin-bottom: 2vh;
 }
 
 .contato .oab {
-  font-size: 1.1rem;
+  font-size: 1.8vw;
   color: #333;
-  margin-bottom: 2rem;
+  margin-bottom: 4vh;
 }
 
 .contato-info {
   display: flex;
   justify-content: center;
-  gap: 2rem;
+  gap: 3vw;
   flex-wrap: wrap;
 }
 
 .contato-item {
   display: flex;
   align-items: flex-start;
-  gap: 1rem;
-  max-width: 300px;
+  gap: 1vw;
+  max-width: 27vw;
   text-align: left;
 }
 
 .contato-item i {
-  font-size: 1.5rem;
+  font-size: 2vw;
   color: #652728;
-  margin-top: 0.2rem;
 }
 
 .contato-item p {
-  font-size: 1rem;
+  font-size: 1.2vw;
   color: #333;
   line-height: 1.5;
   margin: 0;
@@ -294,7 +308,7 @@ nav ul li a:hover::after {
 }
 
 .contato-item a {
-  color: #652728;
+  color: #333;
   text-decoration: none;
   transition: color 0.3s ease;
 }
@@ -305,7 +319,11 @@ nav ul li a:hover::after {
 
 footer {
   text-align: center;
-  padding: 2rem;
+  padding: 4vh;
   background-color: #652728;
   color: #fff;
+}
+
+footer p {
+  font-size: 1.5vw;
 }

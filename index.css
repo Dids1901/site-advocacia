@@ -105,7 +105,6 @@ nav ul li a:hover::after {
   z-index: 2;
   font-family: 'Times New Roman', Times, serif;
   font-size: 4vw;
-  width: 800px;
   text-align: center;
 }
 
@@ -135,7 +134,7 @@ section {
   display: flex;
   justify-content: space-between;
   align-items: flex-start;
-  gap: 10vw;
+  gap: 5vw;
   position: relative;
   overflow: hidden;
 }
@@ -296,7 +295,7 @@ section {
   border-radius: 1vw;
   padding: 2vw;
   text-align: center;
-  width: 11vw;
+  width: 13vw;
   box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
   transition: transform 0.3s ease, box-shadow 0.3s ease, background-color 0.3s ease;
 }
@@ -588,7 +587,7 @@ section {
 }
 
 .contato-item a {
-  color: #652728;
+  color: #333;
   text-decoration: none;
   transition: color 0.3s ease;
 }
