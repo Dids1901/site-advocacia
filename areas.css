@@ -113,7 +113,7 @@
   #direito-medico {
     position: relative;
     z-index: 1; /* Define uma ordem de empilhamento maior que #areas-destaque */
-    height: 80vh;
+    height: 70vh;
     margin-top: 20vh;
     padding-bottom: 10vh;
     width: 100%;
@@ -454,10 +454,10 @@
 .imagem-modelo .trabalhe-comigo {
     position: absolute;
     bottom: 11vh;
-    width: 15vw;
+    width: 30%;
     left: 4vh;
     border: 2px solid #fff;
-    padding: 8px 12px;
+    padding: 0.6vw 1vw;
     color: #fff;
     font-size: 1rem;
     font-weight: 600;
@@ -499,89 +499,82 @@
 }
 
 .imagem-modelo .trabalhe-comigo i {
-    font-size: 1rem;
+    font-size: 1.4vw;
     transition: color 0.3s ease;
-}
-
-.container {
-    background-color: #652728;
-    border-radius: 20px;
-    padding: 5%;
-}
-
-.container p {
-    margin-bottom: 20px;
 }
 
 .contato {
     background-color: #fff;
-    padding: 4rem 10%;
+    padding: 10vh 10%;
     text-align: center;
-}
-
-.contato .logo {
-    height: 100px;
-    margin-bottom: 2rem;
-}
-
-.contato h2 {
-    font-size: 1.8rem;
+  }
+  
+  .contato .logo {
+    height: 20vh;
+    margin-bottom: 4vh;
+  }
+  
+  .contato h2 {
+    font-size: 2.5vw;
     font-weight: 600;
     color: #652728;
-    margin-bottom: 0.5rem;
-}
-
-.contato .oab {
-    font-size: 1.1rem;
+    margin-bottom: 2vh;
+  }
+  
+  .contato .oab {
+    font-size: 1.8vw;
     color: #333;
-    margin-bottom: 2rem;
-}
-
-.contato-info {
+    margin-bottom: 4vh;
+  }
+  
+  .contato-info {
     display: flex;
     justify-content: center;
-    gap: 2rem;
+    gap: 3vw;
     flex-wrap: wrap;
-}
-
-.contato-item {
+  }
+  
+  .contato-item {
     display: flex;
     align-items: flex-start;
-    gap: 1rem;
-    max-width: 300px;
+    gap: 1vw;
+    max-width: 27vw;
     text-align: left;
-}
-
-.contato-item i {
-    font-size: 1.5rem;
+  }
+  
+  .contato-item i {
+    font-size: 2vw;
     color: #652728;
-    margin-top: 0.2rem;
-}
-
-.contato-item p {
-    font-size: 1rem;
+  }
+  
+  .contato-item p {
+    font-size: 1.2vw;
     color: #333;
     line-height: 1.5;
     margin: 0;
-}
-
-.contato-item p strong {
+  }
+  
+  .contato-item p strong {
     color: #652728;
-}
-
-.contato-item a {
-    color: #652728;
+  }
+  
+  .contato-item a {
+    color: #333;
     text-decoration: none;
     transition: color 0.3s ease;
-}
-
-.contato-item a:hover {
+  }
+  
+  .contato-item a:hover {
     color: #4a1d1e;
-}
-
-footer {
+  }
+  
+  footer {
     text-align: center;
-    padding: 2rem;
+    padding: 4vh;
     background-color: #652728;
     color: #fff;
-}
+  }
+  
+  footer p {
+    font-size: 1.5vw;
+  }
