@@ -2,16 +2,17 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-}
-
-body {
+  }
+  
+  body {
     font-family: 'Poppins', sans-serif;
     background-color: #fff;
     color: #333;
     padding-top: 20vh;
-}
-
-header {
+  }
+  
+  
+  header {
     position: fixed;
     top: 0;
     left: 0;
@@ -24,48 +25,49 @@ header {
     height: 20vh;
     padding: 0 5%;
     box-shadow: 0 2px 5px rgba(51, 51, 51, 0.1);
-}
-
-.logo {
-    height: 100px;
-}
-
-nav ul {
+  }
+  
+  .logo {
+    height: 15vh;
+  }
+  
+  nav ul {
     list-style: none;
     display: flex;
-    gap: 2rem;
-}
-
-nav ul li a {
+    gap: 3vw;
+  }
+  
+  nav ul li a {
     text-decoration: none;
     color: #333;
     font-weight: 600;
+    font-size: 1.3vw;
     position: relative;
-    padding: 5px 0;
+    padding: 1vh 0;
     transition: all 0.3s ease;
-}
-
-nav ul li a::after {
+  }
+  
+  nav ul li a::after {
     content: '';
     position: absolute;
     left: 0;
     bottom: 0;
     width: 0%;
-    height: 2px;
+    height: 0.3vh;
     background-color: #652728;
     transition: width 0.3s ease;
-}
-
-nav ul li a:hover {
+  }
+  
+  nav ul li a:hover {
     color: #652728;
     transform: scale(1.05);
-}
-
-nav ul li a:hover::after {
+  }
+  
+  nav ul li a:hover::after {
     width: 100%;
-}
-
-.hero {
+  }
+  
+  .hero {
     position: relative;
     height: 70vh;
     flex-direction: column;
@@ -75,9 +77,9 @@ nav ul li a:hover::after {
     justify-content: center;
     color: white;
     text-shadow: 2px 2px 5px rgba(0,0,0,0.6);
-}
-
-.hero::before {
+  }
+  
+  .hero::before {
     content: '';
     position: absolute;
     top: 0;
@@ -86,39 +88,35 @@ nav ul li a:hover::after {
     height: 100%;
     background-color: rgba(101, 39, 40, 0.4);
     z-index: 1;
-}
-
-.hero h1 {
+  }
+  
+  .hero h1 {
     position: relative;
     z-index: 2;
     font-family: 'Times New Roman', Times, serif;
-    font-size: 3rem;
-    max-width: 800px;
+    font-size: 4vw;
     text-align: center;
-    border-radius: 8px;
-}
-
-.hero p {
+  }
+  
+  .hero p {
     position: relative;
     z-index: 2;
-    font-size: 1.2rem;
-    max-width: 800px;
+    font-size: 2vw;
     text-align: center;
     font-style: italic;
-    border-radius: 8px;
-}
+  }
+  
+  section {
+    padding: 2vh 10%;
+  }
 
-section {
-    padding: 4rem 10%;
-}
-
-.direito-medico {
+  #direito-medico {
     position: relative;
-    height: 110vh;
+    z-index: 1; /* Define uma ordem de empilhamento maior que #areas-destaque */
+    height: 80vh;
     margin-top: 20vh;
     padding-bottom: 10vh;
     width: 100%;
-    overflow: hidden;
 }
 
 .direito-medico img {
@@ -141,14 +139,14 @@ section {
 
 .direito-medico .content {
     position: absolute;
-    top: 50%;
+    top: 60%;
     left: 10%;
     transform: translateY(-50%);
-    width: 30%;
-    height: 110vh;
+    width: 33%;
+    height: 105vh; /* Mantém a altura que faz o content invadir a próxima seção */
     background: #fff;
-    padding: 2rem;
-    z-index: 2;
+    padding: 5vh;
+    z-index: 2; /* Já está presente, mantém o content acima de outros elementos */
     display: flex;
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
     flex-direction: column;
@@ -158,42 +156,41 @@ section {
 .direito-medico .content .title-container {
     display: flex;
     align-items: center;
-    gap: 1rem;
-    margin-bottom: 1.5rem;
+    gap: 2vw;
+    margin-bottom: 1vh;
 }
 
 .direito-medico .content .health-icon {
-    font-size: 3rem;
+    font-size: 4vw;
     color: #652728;
 }
 
 .direito-medico .content h2 {
     font-family: 'Times New Roman', Times, serif;
-    font-size: 2.5rem;
+    font-size: 2.8vw;
     color: #652728;
-    margin-bottom: 1rem;
+    margin-bottom: 3vh;
 }
 
 .direito-medico .content p {
-    font-size: 1rem;
+    font-size: 1.2vw;
     color: #333;
     line-height: 1.6;
-    margin-bottom: 1rem;
+    margin-bottom: 1vh;
 }
 
 .direito-medico .content .trabalhe-comigo {
     position: absolute;
-    bottom: 2rem;
-    width: 200px;
-    left: 2rem;
+    bottom: 5vh;
+    left: 5vh;
     border: 2px solid #652728;
-    padding: 8px 12px;
+    padding: 0.8vw 1vw;
     color: #652728;
-    font-size: 1rem;
+    font-size: 1.3vw;
     font-weight: 600;
     display: flex;
     align-items: center;
-    gap: 0.5rem;
+    gap: 0.5vw;
     background: transparent;
     z-index: 1;
 }
@@ -223,12 +220,14 @@ section {
 }
 
 .direito-medico .content .trabalhe-comigo i {
-    font-size: 1rem;
+    font-size: 1.3vw;
     transition: color 0.3s ease;
 }
 
-.areas-destaque {
-    padding: 4rem 10%;
+#areas-destaque {
+    position: relative;
+    z-index: 0; /* Define uma ordem de empilhamento menor que #direito-medico */
+    padding: 10vh 10%;
     background-color: #652728;
     color: #fff;
 }
@@ -236,7 +235,8 @@ section {
 .titulos {
     display: flex;
     justify-content: space-between;
-    margin-bottom: 2rem;
+    margin-top: 20vh;
+    margin-bottom: 5vh;
 }
 
 .titulo-item {
@@ -247,10 +247,10 @@ section {
 }
 
 .titulo-item h2 {
-    font-size: 1.8rem;
+    font-size: 2.2vw;
     color: #b0b0b0;
     font-family: 'Times New Roman', Times, serif;
-    margin-bottom: 0.5rem;
+    margin-bottom: 1vh;
 }
 
 .titulo-item.active h2 {
@@ -262,9 +262,9 @@ section {
 }
 
 .progress-bar {
-    height: 2px;
+    height: 0.2vh;
     background-color: #652728;
-    border-radius: 2px;
+    border-radius: 1vw;
     width: 90%;
     margin: 0 auto;
     overflow: hidden;
@@ -295,7 +295,7 @@ section {
 
 .areas-content {
     display: flex;
-    gap: 2rem;
+    gap: 2vw;
     align-items: stretch;
 }
 
@@ -313,21 +313,21 @@ section {
 .icone-texto.active {
     display: flex;
     flex-direction: column;
-    gap: 1.5rem;
+    gap: 1.5vw;
 }
 
 .icone-texto .item {
     display: flex;
     flex-direction: column;
     align-items: center;
-    gap: 0.5rem;
+    gap: 0.5vw;
     justify-content: center;
-    border-radius: 10px;
+    border-radius: 2vw;
     border: solid 2px #fff;
-    padding: 1.5rem;
+    padding: 1.5vw;
     text-align: center;
-    width: 250px;
-    height: 150px;
+    width: 20vw;
+    height: 12vw;
     box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
     position: relative;
     overflow: hidden;
@@ -358,23 +358,18 @@ section {
 }
 
 .item:hover {
-    transform: translateY(-5px);
+    transform: translateY(-2vh);
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
-    background-color: #652728;
-}
-
-.item:hover i, .item:hover span {
-    color: #fff;
 }
 
 .icone-texto i {
-    font-size: 2rem;
+    font-size: 2.3vw;
     color: #fff;
 }
 
 .icone-texto span {
-    font-size: 1.1rem;
-    max-width: 250px;
+    font-size: 1.4vw;
+    
     color: #fff;
     line-height: 1.4;
     text-align: center;
@@ -383,9 +378,9 @@ section {
 .imagem-container {
     flex: 2;
     position: relative;
-    height: 350px;
+    height: 60vh;
     border: solid #fff 2px;
-    border-radius: 8px;
+    border-radius: 2vw;
     overflow: hidden;
 }
 
@@ -393,7 +388,7 @@ section {
     position: absolute;
     top: 0;
     left: 0;
-    border-radius: 8px;
+    border-radius: 2vw;
     width: 100%;
     height: 100%;
     opacity: 0;
@@ -410,7 +405,7 @@ section {
     width: 100%;
     height: 100%;
     object-fit: cover;
-    border-radius: 8px;
+    border-radius: 2vw;
     transform: scale(1.1);
     transition: transform 0.3s ease;
 }
@@ -426,7 +421,7 @@ section {
     width: 100%;
     height: 100%;
     background: linear-gradient(to bottom, rgba(101, 39, 40, 0.2) 0%, rgba(101, 39, 40, 0.9) 80%);
-    border-radius: 8px;
+    border-radius: 2vw;
     transition: background 0.3s ease;
 }
 
@@ -436,11 +431,11 @@ section {
 
 .imagem-modelo p {
     position: absolute;
-    bottom: 1rem;
-    left: 1rem;
+    bottom: 4vh;
+    left: 4vh;
     color: #fff;
-    font-size: 1.2rem;
-    padding-right: 1rem;
+    font-size: 1.4vw;
+    padding-right: 4vh;
     line-height: 1.2;
     text-shadow: 1px 1px 2px rgba(0,0,0,0.5);
     transform: translateX(100%);
@@ -453,14 +448,14 @@ section {
 }
 
 .imagem-modelo:hover p {
-    bottom: 5rem;
+    bottom: 13vh;
 }
 
 .imagem-modelo .trabalhe-comigo {
     position: absolute;
-    bottom: 4rem;
-    width: 200px;
-    left: 1rem;
+    bottom: 11vh;
+    width: 15vw;
+    left: 4vh;
     border: 2px solid #fff;
     padding: 8px 12px;
     color: #fff;
