@@ -1,4 +1,26 @@
 document.addEventListener('DOMContentLoaded', () => {
+  // Manipulação de cliques nos blocos para rolagem suave
+  document.querySelectorAll('.bloco').forEach(bloco => {
+      bloco.addEventListener('click', (e) => {
+          e.preventDefault(); // Impede o comportamento padrão do link
+          const href = bloco.getAttribute('href');
+          const [page, hash] = href.split('#');
+          
+          // Se estamos na mesma página (sobre.html) e há um hash
+          if (window.location.pathname.includes(page) && hash) {
+              const target = document.querySelector(`#${hash}`);
+              if (target) {
+                  target.scrollIntoView({ behavior: 'smooth' });
+              }
+          } else {
+              // Redireciona para a página com o hash
+              window.location.href = href;
+          }
+      });
+  });
+});
+
+document.addEventListener('DOMContentLoaded', () => {
   const modelos = ['modelo-1', 'modelo-2', 'modelo-3'];
   const barras = ['bar-1', 'bar-2', 'bar-3'];
   let currentIndex = 0;

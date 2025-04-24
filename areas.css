@@ -357,10 +357,6 @@
     }
 }
 
-.item:hover {
-    transform: translateY(-2vh);
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
-}
 
 .icone-texto i {
     font-size: 2.3vw;
@@ -369,7 +365,7 @@
 
 .icone-texto span {
     font-size: 1.4vw;
-    
+    font-style: italic;
     color: #fff;
     line-height: 1.4;
     text-align: center;
@@ -454,12 +450,12 @@
 .imagem-modelo .trabalhe-comigo {
     position: absolute;
     bottom: 11vh;
-    width: 30%;
+    width: 16vw;
     left: 4vh;
     border: 2px solid #fff;
     padding: 0.6vw 1vw;
     color: #fff;
-    font-size: 1rem;
+    font-size: 1.3vw;
     font-weight: 600;
     display: flex;
     align-items: center;
@@ -505,7 +501,7 @@
 
 .contato {
     background-color: #fff;
-    padding: 10vh 10%;
+    padding: 5vh 10%;
     text-align: center;
   }
   
@@ -549,7 +545,7 @@
   
   .contato-item p {
     font-size: 1.2vw;
-    color: #333;
+    color: #000;
     line-height: 1.5;
     margin: 0;
   }
@@ -559,7 +555,7 @@
   }
   
   .contato-item a {
-    color: #333;
+    color: #000;
     text-decoration: none;
     transition: color 0.3s ease;
   }
