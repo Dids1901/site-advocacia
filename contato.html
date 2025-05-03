@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://unpkg.com/ionicons@5.5.2/dist/ionicons.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <title>Defesa com Excelência</title>
+    <link rel="icon" type="image/png" href="images/logo.png">
+    <link rel="stylesheet" href="contato.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+</head>
+
+<body id="site-body">
+    <header>
+        <img src="images/logo.png" alt="Logo Escritório" class="logo">
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="sobre.html">Sobre</a></li>
+                <li><a href="areas.html">Áreas de Atuação</a></li>
+                <li><a href="#formulario-contato">Contato</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section id="hero" class="hero">
+        <h1>Entre em Contato</h1>
+        <p>Seu caso terá a atenção que merece</p>
+    </section>
+
+    <!-- Seção de formulário e informações de contato -->
+    <section id="formulario-contato" class="formulario-contato">
+        <div class="formulario-wrapper">
+            
+            <div class="formulario">
+                <h2>Envie sua Mensagem</h2>
+                <p>Preencha o formulário abaixo e entraremos em contato em breve.</p>
+                <form action="https://formspree.io/f/your-form-id" method="POST">
+                    <div class="form-group">
+                        <label for="nome">Nome</label>
+                        <input type="text" id="nome" name="nome" placeholder="Seu nome completo" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="email">E-mail</label>
+                        <input type="email" id="email" name="email" placeholder="Seu e-mail" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="mensagem">Mensagem</label>
+                        <textarea id="mensagem" name="mensagem" placeholder="Descreva seu caso ou dúvida" required></textarea>
+                    </div>
+                    <button type="submit">Enviar Mensagem</button>
+                    <a href="https://wa.me/5511998600097?text=Olá,%20gostaria%20de%20falar%20sobre%20um%20assunto%20jurídico." target="_blank" class="whatsapp-btn">
+                        <i class="fab fa-whatsapp"></i> Fale pelo WhatsApp
+                    </a>
+                </form>
+            </div>
+            <div class="contato-info">
+                
+                <h2>Flavia Monteiro de Barros Macedo Coutinho</h2>
+                <p class="oab">OAB/SP 178258</p>
+                <div class="contato-items">
+                    <div class="contato-item">
+                        <i class="fas fa-map-marker-alt"></i>
+                        <div>
+                            <p><strong>Endereço:</strong></p>
+                            <p>Rua José Floriano de Toledo, 38</p>
+                            <p>Chácara Santo Antonio</p>
+                            <p>São Paulo – SP</p>
+                            <p>CEP 04710-110</p>
+                        </div>
+                    </div>
+                    <div class="contato-item">
+                        <i class="fas fa-phone"></i>
+                        <p><strong>Tel/WhatsApp:</strong> <a href="https://wa.me/5511950018389" target="_blank">(11) 95001-8389</a></p>
+                    </div>
+                    <div class="contato-item">
+                        <i class="fas fa-envelope"></i>
+                        <p><strong>E-mail:</strong> <a href="mailto:contato@flaviacoutinhoadvocacia.com.br">contato@flaviacoutinhoadvocacia.com.br</a></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <p>© 2025 Flavia Coutinho - Todos os direitos reservados.</p>
+        <p style="font-size: 0.8rem; opacity: 0.6;">Uma produção de <a href="https://dids1901.github.io" target="_blank" style="color: #f0f0f0;">Diogo Coutinho</a></p>
+    </footer>
+</body>
+</html>
