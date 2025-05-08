@@ -226,97 +226,102 @@
 
 #areas-destaque {
     position: relative;
-    z-index: 0; /* Define uma ordem de empilhamento menor que #direito-medico */
-    padding: 10vh 10%;
+    z-index: 0;
+    padding: 10vh 5%;
     background-color: #652728;
     color: #fff;
-}
-
-.titulos {
+  }
+  
+  .titulos {
     display: flex;
     justify-content: space-between;
     margin-top: 20vh;
     margin-bottom: 5vh;
-}
-
-.titulo-item {
+  }
+  
+  .titulo-item {
     flex: 1;
     text-align: center;
     cursor: pointer;
     transition: all 0.3s ease;
-}
-
-.titulo-item h2 {
+  }
+  
+  .titulo-item h2 {
     font-size: 2.2vw;
     color: #b0b0b0;
     font-family: 'Times New Roman', Times, serif;
     margin-bottom: 1vh;
-}
-
-.titulo-item.active h2 {
+  }
+  
+  .titulo-item.active h2 {
     color: #fff;
-}
-
-.titulo-item:hover h2 {
+  }
+  
+  .titulo-item:hover h2 {
     color: #fff;
-}
-
-.progress-bar {
+  }
+  
+  .progress-bar {
     height: 0.2vh;
     background-color: #652728;
     border-radius: 1vw;
     width: 90%;
     margin: 0 auto;
     overflow: hidden;
-}
-
-.titulo-item:hover .progress-bar {
+  }
+  
+  .titulo-item:hover .progress-bar {
     background-color: #b0b0b0;
-}
-
-.progress-bar.active::before {
+  }
+  
+  .progress-bar.active::before {
     content: '';
     display: block;
     width: 0;
     height: 100%;
     background-color: #fff;
     animation: fillBar 10s linear forwards;
-}
-
-.progress-bar.active {
+    animation-play-state: running; /* Explicitly set to running when active */
+  }
+  
+  .progress-bar.paused::before {
+    animation-play-state: paused; /* Pause animation when paused class is added */
+  }
+  
+  .progress-bar.active {
     background-color: #b0b0b0;
-}
-
-@keyframes fillBar {
+  }
+  
+  @keyframes fillBar {
     to {
-        width: 100%;
+      width: 100%;
     }
-}
-
-.areas-content {
+  }
+  
+  .areas-content {
     display: flex;
     gap: 2vw;
     align-items: stretch;
-}
-
-.icones {
+  }
+  
+  .icones, .icones-direita {
     flex: 1;
     display: flex;
     flex-direction: column;
     justify-content: center;
-}
-
-.icone-texto {
+  }
+  
+  .icone-texto {
     display: none;
-}
-
-.icone-texto.active {
+  }
+  
+  .icone-texto.active {
     display: flex;
     flex-direction: column;
     gap: 1.5vw;
-}
-
-.icone-texto .item {
+  }
+  
+  .icone-texto .item {
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -332,55 +337,54 @@
     position: relative;
     overflow: hidden;
     transition: box-shadow 0.3s ease, background-color 0.3s ease;
-}
-
-.icone-texto .item i,
-.icone-texto .item span {
+  }
+  
+  .icone-texto .item i,
+  .icone-texto .item span {
     transform: translateX(100%);
     opacity: 0;
     transition: transform 0.3s ease, opacity 0.3s ease;
-}
-
-.icone-texto.active .item i,
-.icone-texto.active .item span {
+  }
+  
+  .icone-texto.active .item i,
+  .icone-texto.active .item span {
     animation: slideInFromRight 0.5s ease forwards;
-}
-
-@keyframes slideInFromRight {
+  }
+  
+  @keyframes slideInFromRight {
     0% {
-        transform: translateX(100%);
-        opacity: 0;
+      transform: translateX(100%);
+      opacity: 0;
     }
     100% {
-        transform: translateX(0);
-        opacity: 1;
+      transform: translateX(0);
+      opacity: 1;
     }
-}
-
-
-.icone-texto i {
+  }
+  
+  .icone-texto i {
     font-size: 2.3vw;
     color: #fff;
-}
-
-.icone-texto span {
+  }
+  
+  .icone-texto span {
     font-size: 1.4vw;
     font-style: italic;
     color: #fff;
     line-height: 1.4;
     text-align: center;
-}
-
-.imagem-container {
+  }
+  
+  .imagem-container {
     flex: 2;
     position: relative;
     height: 60vh;
     border: solid #fff 2px;
     border-radius: 2vw;
     overflow: hidden;
-}
-
-.imagem-modelo {
+  }
+  
+  .imagem-modelo {
     position: absolute;
     top: 0;
     left: 0;
@@ -390,27 +394,27 @@
     opacity: 0;
     transition: opacity 0.5s ease;
     pointer-events: none;
-}
-
-.imagem-modelo.active {
+  }
+  
+  .imagem-modelo.active {
     opacity: 1;
     pointer-events: auto;
-}
-
-.imagem-modelo img {
+  }
+  
+  .imagem-modelo img {
     width: 100%;
     height: 100%;
     object-fit: cover;
     border-radius: 2vw;
     transform: scale(1.1);
     transition: transform 0.3s ease;
-}
-
-.imagem-modelo:hover img {
+  }
+  
+  .imagem-modelo:hover img {
     transform: scale(1);
-}
-
-.imagem-modelo .overlay {
+  }
+  
+  .imagem-modelo .overlay {
     position: absolute;
     top: 0;
     left: 0;
@@ -419,13 +423,13 @@
     background: linear-gradient(to bottom, rgba(101, 39, 40, 0.2) 0%, rgba(101, 39, 40, 0.9) 80%);
     border-radius: 2vw;
     transition: background 0.3s ease;
-}
-
-.imagem-modelo:hover .overlay {
+  }
+  
+  .imagem-modelo:hover .overlay {
     background: linear-gradient(to bottom, rgba(101, 39, 40, 0.3) 0%, rgba(101, 39, 40, 0.9) 60%);
-}
-
-.imagem-modelo p {
+  }
+  
+  .imagem-modelo p {
     position: absolute;
     bottom: 4vh;
     left: 4vh;
@@ -437,17 +441,17 @@
     transform: translateX(100%);
     opacity: 0;
     transition: bottom 0.3s ease, transform 0.3s ease, opacity 0.3s ease;
-}
-
-.imagem-modelo.active p {
+  }
+  
+  .imagem-modelo.active p {
     animation: slideInFromRight 0.5s ease forwards;
-}
-
-.imagem-modelo:hover p {
+  }
+  
+  .imagem-modelo:hover p {
     bottom: 13vh;
-}
-
-.imagem-modelo .trabalhe-comigo {
+  }
+  
+  .imagem-modelo .trabalhe-comigo {
     position: absolute;
     bottom: 11vh;
     width: 16vw;
@@ -464,13 +468,13 @@
     transition: opacity 0.3s ease;
     position: relative;
     z-index: 1;
-}
-
-.imagem-modelo:hover .trabalhe-comigo {
+  }
+  
+  .imagem-modelo:hover .trabalhe-comigo {
     opacity: 1;
-}
-
-.imagem-modelo .trabalhe-comigo::before {
+  }
+  
+  .imagem-modelo .trabalhe-comigo::before {
     content: '';
     position: absolute;
     top: 0;
@@ -480,24 +484,24 @@
     background: #fff;
     transition: width 0.3s ease;
     z-index: -1;
-}
-
-.imagem-modelo .trabalhe-comigo:hover::before {
+  }
+  
+  .imagem-modelo .trabalhe-comigo:hover::before {
     width: 100%;
-}
-
-.imagem-modelo .trabalhe-comigo:hover {
+  }
+  
+  .imagem-modelo .trabalhe-comigo:hover {
     color: #652728;
-}
-
-.imagem-modelo .trabalhe-comigo:hover i {
+  }
+  
+  .imagem-modelo .trabalhe-comigo:hover i {
     color: #652728;
-}
-
-.imagem-modelo .trabalhe-comigo i {
+  }
+  
+  .imagem-modelo .trabalhe-comigo i {
     font-size: 1.4vw;
     transition: color 0.3s ease;
-}
+  }
 
 .contato {
     background-color: #fff;
@@ -573,4 +577,8 @@
   
   footer p {
     font-size: 1.5vw;
+  }
+
+  .mencao {
+    font-size: 1.2vw; opacity: 0.6;
   }

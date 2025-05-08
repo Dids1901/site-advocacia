@@ -24,19 +24,30 @@ document.addEventListener('DOMContentLoaded', () => {
   const modelos = ['modelo-1', 'modelo-2', 'modelo-3'];
   const barras = ['bar-1', 'bar-2', 'bar-3'];
   let currentIndex = 0;
-  let intervalId = null;
 
-  const updateModel = () => {
-    // Remove classe active de todos
+  const updateModel = (index = null) => {
+    if (index !== null) {
+      currentIndex = index;
+    }
+
+    // Remove active and paused classes from all elements
     document.querySelectorAll('.icone-texto').forEach(el => el.classList.remove('active'));
     document.querySelectorAll('.imagem-modelo').forEach(el => el.classList.remove('active'));
-    document.querySelectorAll('.progress-bar').forEach(el => el.classList.remove('active'));
+    document.querySelectorAll('.progress-bar').forEach(el => {
+      el.classList.remove('active', 'paused');
+      // Reset animation by removing and re-adding the element's style
+      const beforeStyle = el.style.animation;
+      el.style.animation = 'none';
+      el.offsetHeight; // Trigger reflow to reset animation
+      el.style.animation = beforeStyle;
+    });
     document.querySelectorAll('.titulo-item').forEach(el => el.classList.remove('active'));
 
-    // Adiciona classe active ao modelo, barra e título atuais
-    document.querySelector(`.icone-texto.${modelos[currentIndex]}`).classList.add('active');
+    // Add active class to current model, bar, and title
+    document.querySelectorAll(`.icone-texto.${modelos[currentIndex]}`).forEach(el => el.classList.add('active'));
     document.querySelector(`.imagem-modelo.${modelos[currentIndex]}`).classList.add('active');
-    document.querySelector(`.progress-bar.${barras[currentIndex]}`).classList.add('active');
+    const activeBar = document.querySelector(`.progress-bar.${barras[currentIndex]}`);
+    activeBar.classList.add('active');
     const tituloItems = document.querySelectorAll('.titulo-item');
     if (tituloItems[currentIndex]) {
       tituloItems[currentIndex].classList.add('active');
@@ -44,24 +55,38 @@ document.addEventListener('DOMContentLoaded', () => {
       console.error(`Erro: .titulo-item na posição ${currentIndex} não encontrado`);
     }
 
-    // Atualiza índice
-    currentIndex = (currentIndex + 1) % modelos.length;
+    // Set up animationend listener for the active progress bar
+    const nextIndex = (currentIndex + 1) % modelos.length;
+    activeBar.addEventListener('animationend', () => {
+      if (activeBar.classList.contains('active') && !activeBar.classList.contains('paused')) {
+        updateModel(nextIndex);
+      }
+    }, { once: true });
   };
 
-  const startCarousel = () => {
-    if (intervalId) clearInterval(intervalId);
-    updateModel();
-    intervalId = setInterval(updateModel, 10000);
-  };
+  // Initialize carousel
+  updateModel();
 
-  // Inicializa carrossel
-  startCarousel();
-
-  // Adiciona cliques aos títulos
+  // Add click handlers for titles
   document.querySelectorAll('.titulo-item').forEach((titulo, index) => {
     titulo.addEventListener('click', () => {
-      currentIndex = index;
-      startCarousel();
+      updateModel(index);
+    });
+  });
+
+  // Add hover handlers to pause/resume animation
+  document.querySelectorAll('.imagem-modelo').forEach(imagem => {
+    imagem.addEventListener('mouseenter', () => {
+      const activeBar = document.querySelector('.progress-bar.active');
+      if (activeBar) {
+        activeBar.classList.add('paused');
+      }
+    });
+    imagem.addEventListener('mouseleave', () => {
+      const activeBar = document.querySelector('.progress-bar.active');
+      if (activeBar) {
+        activeBar.classList.remove('paused');
+      }
     });
   });
 });

@@ -262,6 +262,7 @@ section {
 
 .formulario button:hover {
     background-color: #4a1d1e;
+    color: #fff;
 }
 
 .whatsapp-btn {
@@ -328,73 +329,7 @@ footer p {
     font-size: 1.5vw;
 }
 
-@media (max-width: 768px) {
-    .formulario-wrapper {
-        flex-direction: column;
-        align-items: center;
-    }
+.mencao {
+    font-size: 1.2vw; opacity: 0.6;
+  }
 
-    .contato-info,
-    .formulario {
-        max-width: 100%;
-        width: 100%;
-    }
-
-    .contato-info h2 {
-        font-size: 5vw;
-    }
-
-    .contato-info .oab {
-        font-size: 3.5vw;
-    }
-
-    .contato-items {
-        flex-direction: column;
-        align-items: center;
-    }
-
-    .contato-item {
-        max-width: 100%;
-        text-align: center;
-    }
-
-    .contato-item i {
-        font-size: 4vw;
-    }
-
-    .contato-item p {
-        font-size: 3vw;
-    }
-
-    .formulario h2 {
-        font-size: 5vw;
-    }
-
-    .formulario p {
-        font-size: 3vw;
-    }
-
-    .form-group label,
-    .form-group input,
-    .form-group textarea,
-    .formulario button,
-    .whatsapp-btn {
-        font-size: 3vw;
-    }
-
-    .whatsapp-btn i {
-        font-size: 3.5vw;
-    }
-
-    .video-contato h3 {
-        font-size: 5vw;
-    }
-
-    .video-contato p {
-        font-size: 3vw;
-    }
-
-    .video-contato iframe {
-        height: 60vw;
-    }
-}

@@ -831,3 +831,7 @@ footer {
 footer p {
   font-size: 1.5vw;
 }
+
+.mencao {
+  font-size: 1.2vw; opacity: 0.6;
+}
