@@ -30,6 +30,17 @@ header {
   height: 15vh;
 }
 
+.menu-toggle {
+  display: none;
+  background: none;
+  border: none;
+  font-size: 6vw;
+  color: #333;
+  cursor: pointer;
+  z-index: 1001;
+}
+
+
 nav ul {
   list-style: none;
   display: flex;
@@ -139,7 +150,7 @@ section {
   background-color: #fff;
   border-radius: 1vw;
   padding: 2vw;
-  text-align: center;
+  text-align: justify;
   width: 13vw;
   box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
   transition: transform 0.3s ease, box-shadow 0.3s ease;
@@ -223,10 +234,10 @@ section {
 
 .sobre {
   display: flex;
-  padding: 0 10%;
-  margin-top: 0; /* Ajustado para conectar com #destaques */
+  padding: 5vh 10% 0 10%; /* No bottom padding to ensure flush bottom */
+  margin-top: 0;
   justify-content: space-between;
-  align-items: flex-start;
+  align-items: flex-end; /* Align items to bottom */
   background-color: #652728;
   gap: 5vw;
   position: relative;
@@ -236,54 +247,52 @@ section {
 .sobre::before {
   content: '';
   position: absolute;
-  top: -30vh; /* Ajustado para cobrir transição com #destaques */
+  top: -15vh;
   left: 0;
   width: 100%;
-  height: 40vh;
+  height: 25vh;
   background-color: #fff;
-  transform: skewY(-5deg);
+  transform: skewY(5deg);
   z-index: 0;
 }
 
 .sobre-conteudo {
-  flex: 1 1 60%;
+  width: 60%; /* Text takes 60% of width */
   z-index: 5;
-  padding-top: 25vh;
+  padding-top: 15vh; /* Reduced for compactness */
 }
 
 .sobre-conteudo p {
   font-size: 1.3vw;
-}
-
-.sobre p {
-  margin-bottom: 3vh;
+  margin-bottom: 2vh;
+  text-align: justify;
   color: #fff;
+  line-height: 1.5;
 }
 
 .imagem-perfil {
+  width: 50%; /* Image takes 30% of width */
   position: relative;
-  flex: 1 1 100vw;
-  margin-top: 10vh;
-  display: flex;
-  justify-content: flex-end;
-  clip-path: inset(-100px 0 0 0);
   z-index: 1;
+  line-height: 0; /* Remove any line-height spacing */
 }
 
-.sobre .perfil {
-  width: 25vw;
-  display: block;
+.imagem-perfil img {
+  width: 100%;
+  height: auto;
+  object-fit: cover; /* Ensures image fits without distortion */
+  display: block; /* Remove inline spacing */
+  vertical-align: bottom; /* Align to bottom to eliminate gap */
 }
 
-.sobre .overlay-perfil {
+.overlay-perfil {
   position: absolute;
   top: 0;
   left: 0;
   width: 100%;
   height: 100%;
-  background-color: #652728;
-  opacity: 0.7;
-  z-index: 1;
+  background-color: rgba(101, 39, 40, 0.8); /* Subtle tint matching #652728 */
+  z-index: 2; /* Above image, below content */
 }
 
 .contato {
@@ -364,4 +373,225 @@ footer p {
 
 .mencao {
   font-size: 1.2vw; opacity: 0.6;
+}
+
+@media (max-width: 768px) {
+
+  body {
+    font-family: 'Poppins', sans-serif;
+    background-color: #652728;
+    color: #333;
+    text-align: center;
+    padding-top: 10vh;
+  }
+
+  header {
+    height: auto;
+    padding: 10px 5%;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .logo {
+    height: 10vh;
+  }
+
+  .menu-toggle {
+    display: block;
+  }
+
+  .nav-menu {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    background-color: rgba(101, 39, 40, 0.9);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transform: translateX(100%);
+    z-index: 1000;
+  }
+
+  .nav-menu.active {
+    transform: translateX(0);
+  }
+
+  nav ul {
+    flex-direction: column;
+    gap: 5vh;
+    text-align: center;
+  }
+
+  nav ul li a {
+    font-size: 6vw;
+    color: #fff;
+    padding: 2vh 0;
+  }
+
+  nav ul li a::after {
+    background-color: #fff;
+  }
+
+  nav ul li a:hover {
+    color: #fff;
+    transform: scale(1.1);
+  }
+
+  .hero {
+    height: 60vh;
+  }
+
+  .hero h1 {
+    font-size: 10vw;
+  }
+
+  .hero p {
+    font-size: 5vw;
+  }
+  .sobre {
+    display: flex;
+    padding: 5vh 10% 0 10%; /* No bottom padding to ensure flush bottom */
+    margin-top: 0;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: flex-end; /* Align items to bottom */
+    background-color: #652728;
+    gap: 5vw;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .sobre::before {
+    content: '';
+    position: absolute;
+    top: -15vh;
+    left: 0;
+    width: 100%;
+    height: 25vh;
+    background-color: #fff;
+    transform: skewY(0deg);
+    z-index: 0;
+  }
+
+  .imagem-perfil {
+    width: 100%; /* Image takes 30% of width */
+    position: relative;
+    z-index: 1;
+    line-height: 0; /* Remove any line-height spacing */
+  }
+  
+  .imagem-perfil img {
+    width: 100%;
+    height: auto;
+    object-fit: cover; /* Ensures image fits without distortion */
+    display: block; /* Remove inline spacing */
+    vertical-align:auto; /* Align to bottom to eliminate gap */
+  }
+
+  .destaques {
+    background-color: #fff;
+    padding: 5vh 10%;
+    margin-top: 0vh;
+    display: flex;
+    justify-content: space-between;
+    gap: 4vh;
+    flex-wrap: wrap;
+  }
+
+  .destaques h2 {
+    font-size: 8vw;
+    font-family: 'Times New Roman', Times, serif;
+    color: #652728;
+  }
+
+  .destaques .bloco {
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-color: #fff;
+    border-radius: 4vw;
+    padding: 4vw;
+    text-align: center;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    position: relative; /* Necessário para o pseudo-elemento */
+    text-decoration: none; /* Remove sublinhado padrão do link */
+    color: inherit; /* Mantém cores padrão do conteúdo */
+    overflow: hidden; /* Garante que o preenchimento não vaze */
+  }
+
+  .blocos {
+    flex-direction: column;
+    display: flex;
+    gap: 3vw;
+  }
+
+  .bloco i {
+    font-size: 7vw;
+    color: #652728;
+    margin-bottom: 1vh;
+  }
+  
+  .destaques .bloco h3 {
+    font-size: 5vw;
+    color: #652728;
+    font-style: italic;
+    margin-bottom: 2vh;
+  }
+  
+  .destaques .bloco p {
+    font-size: 4vw;
+    color: #000;
+    line-height: 1.5;
+  }
+
+  .sobre-conteudo {
+    width: 100%; /* Text takes 60% of width */
+    z-index: 5;
+    padding-top: 15vh; /* Reduced for compactness */
+  }
+
+  .sobre-conteudo p {
+    font-size: 4vw;
+    margin-bottom: 2vh;
+    text-align: justify;
+    color: #fff;
+    line-height: 1.5;
+  }
+
+  .contato-info {
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+  }
+
+  .contato-item {
+    max-width: 100%;
+  }
+
+  .contato h2 {
+    font-size: 6vw;
+  }
+
+  .contato .oab {
+    font-size: 5vw;
+  }
+
+  .contato-item i {
+    font-size: 6vw;
+  }
+
+  .contato-item p {
+    font-size: 3.5vw;
+  }
+
+  footer p {
+    font-size: 4vw;
+  }
+
+  .mencao {
+    font-size: 3vw;
+  }
 }

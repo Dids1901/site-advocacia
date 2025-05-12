@@ -16,7 +16,10 @@
 <body id="site-body">
     <header>
       <img src="images/logo.png" alt="Logo Escritório" class="logo">
-      <nav>
+      <button class="menu-toggle" aria-label="Toggle Menu">
+        <i class="fas fa-bars"></i>
+    </button>
+      <nav class="nav-menu">
         <ul>
           <li><a href="index.html">Home</a></li>
           <li><a href="sobre.html">Sobre</a></li>
@@ -56,12 +59,10 @@
     </section>
   
     <section id="sobre" class="sobre">
-      <div>
-        <div class="sobre-conteudo">
-          <p>Advogada com sólida trajetória de mais de 30 anos de atuação, pautada na ética, comprometimento e excelência técnica. Com forte presença nas áreas de Direito Civil, Direito de Família, Direito do Consumidor e, principalmente, Direito Médico e da Saúde, alia experiência prática à constante atualização jurídica.</p>
-          <p>Sua atuação é marcada pela análise criteriosa de contratos, regularização de imóveis, avaliação de riscos e pleitos, elaboração de peças processuais complexas, recursos e sustentação de teses em todas as instâncias judiciais. Com ampla vivência em audiências e julgamentos, oferece um atendimento personalizado e estratégico para cada caso.</p>
-          <p>Participa regularmente de cursos de atualização, mantendo-se alinhada com a mais recente doutrina e jurisprudência dos tribunais superiores. Trabalha em parceria com profissionais de áreas complementares, o que permite uma abordagem multidisciplinar e completa para cada demanda jurídica.</p>
-        </div>
+      <div class="sobre-conteudo">
+        <p>Advogada com sólida trajetória de mais de 30 anos de atuação, pautada na ética, comprometimento e excelência técnica. Com forte presença nas áreas de Direito Civil, Direito de Família, Direito do Consumidor e, principalmente, Direito Médico e da Saúde, alia experiência prática à constante atualização jurídica.</p>
+        <p>Sua atuação é marcada pela análise criteriosa de contratos, regularização de imóveis, avaliação de riscos e pleitos, elaboração de peças processuais complexas, recursos e sustentação de teses em todas as instâncias judiciais. Com ampla vivência em audiências e julgamentos, oferece um atendimento personalizado e estratégico para cada caso.</p>
+        <p>Participa regularmente de cursos de atualização, mantendo-se alinhada com a mais recente doutrina e jurisprudência dos tribunais superiores. Trabalha em parceria com profissionais de áreas complementares, o que permite uma abordagem multidisciplinar e completa para cada demanda jurídica.</p>
       </div>
       <div class="imagem-perfil">
         <img src="images/flaviaRecortada.png" alt="Flavia Coutinho" class="perfil">
@@ -99,5 +100,26 @@
       <p>&copy; 2025 Flavia Coutinho - Todos os direitos reservados.</p>
       <p class="mencao">Uma produção de <a href="https://dids1901.github.io" target="_blank" style="color: #f0f0f0;">Diogo Coutinho</a></p>
     </footer>
+    <script>
+      document.addEventListener('DOMContentLoaded', function () {
+          const menuToggle = document.querySelector('.menu-toggle');
+          const navMenu = document.querySelector('.nav-menu');
+          
+          menuToggle.addEventListener('click', () => {
+              navMenu.classList.toggle('active');
+              const isActive = navMenu.classList.contains('active');
+              menuToggle.innerHTML = isActive ? '<i class="fas fa-times"></i>' : '<i class="fas fa-bars"></i>';
+          });
+
+          // Fechar o menu ao clicar em um link
+          const navLinks = document.querySelectorAll('.nav-menu a');
+          navLinks.forEach(link => {
+              link.addEventListener('click', () => {
+                  navMenu.classList.remove('active');
+                  menuToggle.innerHTML = '<i class="fas fa-bars"></i>';
+              });
+          });
+        });
+      </script>
 </body>
 </html>

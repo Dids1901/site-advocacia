@@ -66,6 +66,16 @@
   nav ul li a:hover::after {
     width: 100%;
   }
+
+  .menu-toggle {
+    display: none;
+    background: none;
+    border: none;
+    font-size: 6vw;
+    color: #333;
+    cursor: pointer;
+    z-index: 1001;
+  }
   
   .hero {
     position: relative;
@@ -186,6 +196,7 @@
     border: 2px solid #652728;
     padding: 0.8vw 1vw;
     color: #652728;
+    text-decoration: none;
     font-size: 1.3vw;
     font-weight: 600;
     display: flex;
@@ -365,6 +376,7 @@
   .icone-texto i {
     font-size: 2.3vw;
     color: #fff;
+    margin-bottom: 2vh;
   }
   
   .icone-texto span {
@@ -459,6 +471,7 @@
     border: 2px solid #fff;
     padding: 0.6vw 1vw;
     color: #fff;
+    text-decoration: none;
     font-size: 1.3vw;
     font-weight: 600;
     display: flex;
@@ -581,4 +594,315 @@
 
   .mencao {
     font-size: 1.2vw; opacity: 0.6;
+  }
+
+  @media (max-width: 768px) {
+    body {
+      padding-top: 10vh;
+      background-color: #fff;
+    }
+  
+    header {
+      height: auto;
+    padding: 10px 5%;
+    justify-content: space-between;
+    align-items: center;
+    }
+  
+    .logo {
+      height: 10vh;
+    }
+  
+    .menu-toggle {
+      display: block;
+      font-size: 8vw;
+    }
+  
+    .nav-menu {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100vh;
+      background-color: rgba(101, 39, 40, 0.95);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      transform: translateX(100%);
+      transition: transform 0.3s ease;
+      z-index: 1000;
+    }
+  
+    .nav-menu.active {
+      transform: translateX(0);
+    }
+  
+    nav ul {
+      flex-direction: column;
+      gap: 8vh;
+      text-align: center;
+    }
+  
+    nav ul li a {
+      font-size: 6vw;
+      color: #fff;
+      padding: 2vh 0;
+    }
+  
+    nav ul li a::after {
+      background-color: #fff;
+    }
+  
+    nav ul li a:hover {
+      transform: scale(1.1);
+    }
+  
+    .hero {
+      height: 60vh;
+    }
+  
+    .hero h1 {
+      font-size: 10vw;
+    }
+  
+    .hero p {
+      font-size: 5vw;
+    }
+  
+    section {
+      padding: 5vw;
+    }
+  
+    #direito-medico {
+      height: auto;
+      margin-top: 5vh;
+      padding-bottom: 5vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+  
+    .direito-medico img {
+      position: relative;
+      width: 100%;
+      height: 40vh;
+      object-fit: cover;
+      right: auto;
+      bottom: auto;
+      border-radius: 3vw;
+    }
+  
+    .direito-medico .overlay {
+      display: none;
+    }
+  
+    .direito-medico .content {
+      position: relative;
+      top: auto;
+      left: auto;
+      transform: none;
+      width: 100%;
+      height: auto;
+      padding: 5vw;
+      margin-top: -5vh;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+      z-index: 2;
+    }
+  
+    .direito-medico .content .title-container {
+      flex-direction: column;
+      align-items: center;
+      gap: 3vw;
+      margin-bottom: 5vw;
+    }
+  
+    .direito-medico .content .health-icon {
+      font-size: 10vw;
+    }
+  
+    .direito-medico .content h2 {
+      font-size: 8vw;
+      text-align: center;
+      margin-bottom: 5vw;
+    }
+  
+    .direito-medico .content p {
+      font-size: 4vw;
+      line-height: 1.8;
+      text-align: justify;
+    }
+  
+    .direito-medico .content .trabalhe-comigo {
+      position: relative;
+      bottom: auto;
+      left: auto;
+      padding: 3vw 5vw;
+      font-size: 4vw;
+      margin: 5vw auto 0;
+      text-align: center;
+      border-radius: 2vw;
+    }
+  
+    .direito-medico .content .trabalhe-comigo i {
+      font-size: 4vw;
+      margin-left: 2vw;
+    }
+  
+    #areas-destaque {
+      padding: 5vh 5%;
+    }
+  
+    .titulos {
+      flex-direction: column;
+      gap: 5vw;
+      margin-top: 5vh;
+      margin-bottom: 8vh;
+    }
+  
+    .titulo-item {
+      padding: 3vw 0;
+    }
+  
+    .titulo-item h2 {
+      font-size: 8vw;
+    }
+  
+    .progress-bar {
+      height: 0.5vh;
+      width: 80%;
+    }
+  
+    .areas-content {
+      flex-direction: column;
+      gap: 5vw;
+    }
+  
+    .icones, .icones-direita {
+      flex: none;
+      width: 100%;
+    }
+  
+    .icone-texto.active {
+      flex-direction: row;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 3vw;
+    }
+  
+    .icone-texto .item {
+      width: 45%;
+      height: auto;
+      padding: 5vw;
+      border-radius: 3vw;
+    }
+  
+    .icone-texto i {
+      font-size: 7vw;
+    }
+  
+    .icone-texto span {
+      font-size: 3.5vw;
+      line-height: 1.5;
+    }
+  
+    .imagem-container {
+      flex: none;
+      width: 100%;
+      height: 50vh;
+      border-radius: 3vw;
+    }
+  
+    .imagem-modelo p {
+      position: absolute; /* Restaurado para posicionar em relação ao .imagem-modelo */
+      bottom: 12vh; /* Ajustado para ficar acima do botão */
+      left: 5vw;
+      right: 5vw; /* Adicionado para limitar a largura do texto */
+      font-size: 3.5vw;
+      padding: 0;
+      line-height: 1.5;
+      text-align: justify;
+      transform: translateX(100%); /* Mantém a animação inicial */
+      opacity: 0; /* Mantém a animação inicial */
+      transition: transform 0.3s ease, opacity 0.3s ease;
+    }
+  
+    .imagem-modelo.active p {
+      animation: slideInFromRight 0.5s ease forwards; /* Garante que a animação seja aplicada */
+    }
+  
+    .imagem-modelo:hover p {
+      bottom: 15vh; /* Mantém a posição sem mudança no hover */
+    }
+  
+    .imagem-modelo .trabalhe-comigo {
+      position: absolute; /* Mantém o posicionamento em relação ao .imagem-modelo */
+      bottom: 2vh; /* Ajustado para ficar na parte inferior */
+      left: 5vw;
+      width: 60%; /* Ajustado para melhor proporção */
+      padding: 3vw 5vw;
+      font-size: 4vw;
+      border: 2px solid #fff;
+      border-radius: 2vw;
+      color: #fff;
+      font-weight: 600;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 2vw;
+      opacity: 1; /* Sempre visível em mobile */
+      z-index: 1;
+    }
+  
+    .imagem-modelo .trabalhe-comigo i {
+      font-size: 4vw;
+    }
+  
+    .contato {
+      padding: 5vh 5%;
+    }
+  
+    .contato .logo {
+      height: 15vh;
+    }
+  
+    .contato h2 {
+      font-size: 6vw;
+    }
+  
+    .contato .oab {
+      font-size: 5vw;
+    }
+  
+    .contato-info {
+      flex-direction: column;
+      gap: 5vw;
+      align-items: center;
+    }
+  
+    .contato-item {
+      max-width: 100%;
+      flex-direction: row;
+      align-items: center;
+      gap: 3vw;
+    }
+  
+    .contato-item i {
+      font-size: 6vw;
+    }
+  
+    .contato-item p {
+      font-size: 3.5vw;
+    }
+  
+    footer {
+      padding: 5vh 5%;
+    }
+  
+    footer p {
+      font-size: 4vw;
+    }
+  
+    .mencao {
+      font-size: 3vw;
+    }
   }

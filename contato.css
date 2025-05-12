@@ -30,6 +30,16 @@ header {
     height: 15vh;
 }
 
+.menu-toggle {
+    display: none;
+    background: none;
+    border: none;
+    font-size: 6vw;
+    color: #333;
+    cursor: pointer;
+    z-index: 1001;
+  }
+
 nav ul {
     list-style: none;
     display: flex;
@@ -333,3 +343,220 @@ footer p {
     font-size: 1.2vw; opacity: 0.6;
   }
 
+  @media (max-width: 768px) {
+    body {
+      padding-top: 10vh;
+      background-color: #fff;
+      color: #333;
+    }
+  
+    header {
+        height: auto;
+        padding: 10px 5%;
+        justify-content: space-between;
+        align-items: center;
+    }
+  
+    .logo {
+      height: 10vh;
+    }
+  
+    .menu-toggle {
+      display: block;
+      font-size: 8vw;
+    }
+  
+    .nav-menu {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100vh;
+      background-color: rgba(101, 39, 40, 0.95);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      transform: translateX(100%);
+      transition: transform 0.3s ease;
+      z-index: 1000;
+    }
+  
+    .nav-menu.active {
+      transform: translateX(0);
+    }
+  
+    nav ul {
+      flex-direction: column;
+      gap: 8vh;
+      text-align: center;
+    }
+  
+    nav ul li a {
+      font-size: 7vw;
+      color: #fff;
+      padding: 2vh 0;
+    }
+  
+    nav ul li a::after {
+      background-color: #fff;
+    }
+  
+    nav ul li a:hover {
+      color: #fff;
+      transform: scale(1.1);
+    }
+  
+    .hero {
+      height: 60vh;
+    }
+  
+    .hero h1 {
+      font-size: 9vw;
+    }
+  
+    .hero p {
+      font-size: 4.5vw;
+    }
+  
+    section {
+      padding: 5vw;
+    }
+  
+    .formulario-contato {
+      padding: 5vh 5%;
+    }
+  
+    .formulario-wrapper {
+      flex-direction: column-reverse;
+      gap: 8vw;
+    }
+  
+    .contato-info {
+      max-width: 100%;
+      text-align: center;
+    }
+  
+    .contato-info .logo {
+      height: 15vh;
+      margin-bottom: 5vw;
+    }
+  
+    .contato-info h2 {
+      font-size: 6vw;
+      margin-bottom: 3vw;
+    }
+  
+    .contato-info .oab {
+      font-size: 5vw;
+      margin-bottom: 5vw;
+    }
+  
+    .whatsapp-btn {
+      width: 70%;
+      padding: 3vw 5vw;
+      font-size: 4vw;
+      margin: 5vw auto;
+      border-radius: 2vw;
+    }
+  
+    .whatsapp-btn i {
+      font-size: 5vw;
+    }
+  
+    .contato-items {
+      flex-direction: column;
+      gap: 5vw;
+      align-items: center;
+    }
+  
+    .contato-item {
+      max-width: 100%;
+      flex-direction: row;
+      align-items: center;
+      gap: 3vw;
+      text-align: left;
+    }
+  
+    .contato-item i {
+      font-size: 6vw;
+    }
+  
+    .contato-item p {
+      font-size: 3.5vw;
+      line-height: 1.6;
+    }
+  
+    .formulario {
+      max-width: 100%;
+      padding: 5vw;
+      border-radius: 2vw;
+    }
+  
+    .formulario h2 {
+      font-size: 6vw;
+      margin-bottom: 3vw;
+    }
+  
+    .formulario p {
+      font-size: 3.5vw;
+      margin-bottom: 5vw;
+    }
+  
+    .form-group {
+      margin-bottom: 4vw;
+    }
+  
+    .form-group label {
+      font-size: 3.5vw;
+      margin-bottom: 1vw;
+    }
+  
+    .form-group input,
+    .form-group textarea {
+      padding: 3vw;
+      font-size: 3.5vw;
+      border-radius: 1vw;
+    }
+  
+    .form-group textarea {
+      height: 30vw;
+    }
+  
+    .formulario button {
+      padding: 3vw 5vw;
+      font-size: 4vw;
+      border-radius: 1vw;
+      margin-bottom: 3vw;
+    }
+  
+    .video-contato {
+      padding: 5vh 5%;
+    }
+  
+    .video-contato h3 {
+      font-size: 5vw;
+      margin-bottom: 3vw;
+    }
+  
+    .video-contato p {
+      font-size: 3.5vw;
+      margin-bottom: 5vw;
+    }
+  
+    .video-contato iframe {
+      height: 60vw; /* Mantém proporção 16:9 aproximada */
+      border-radius: 2vw;
+    }
+  
+    footer {
+      padding: 5vh 5%;
+    }
+  
+    footer p {
+      font-size: 4vw;
+    }
+  
+    .mencao {
+      font-size: 3vw;
+    }
+  }

@@ -15,17 +15,20 @@
 </head>
 
 <body id="site-body">
-    <header>
-      <img src="images/logo.png" alt="Logo Escritório" class="logo">
-      <nav>
+  <header>
+    <img src="images/logo.png" alt="Logo Escritório" class="logo">
+    <button class="menu-toggle" aria-label="Toggle Menu">
+        <i class="fas fa-bars"></i>
+    </button>
+    <nav class="nav-menu">
         <ul>
-          <li><a href="index.html">Home</a></li>
-          <li><a href="sobre.html">Sobre</a></li>
-          <li><a href="areas.html">Áreas de Atuação</a></li>
-          <li><a href="contato.html">Contato</a></li>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="sobre.html">Sobre</a></li>
+            <li><a href="areas.html">Áreas de Atuação</a></li>
+            <li><a href="contato.html">Contato</a></li>
         </ul>
-      </nav>
-    </header>
+    </nav>
+</header>
   
     <section id="hero" class="hero">
       <h1>Defesa com Excelência</h1>
@@ -36,7 +39,7 @@
       <div>
           <div class="sobre-conteudo">
               <h2>Sobre Mim</h2>
-              <p>Advogada com sólida trajetória de mais de 30 anos de atuação, pautada na ética, comprometimento e excelência técnica. Com forte presença nas áreas de Direito Civil, Direito de Família, Direito do Consumidor e, principalmente, Direito Médico e da Saúde, alia experiência prática à constante atualização jurídica.</p>
+              <p class="sobre-mim-text">Advogada com sólida trajetória de mais de 30 anos de atuação, pautada na ética, comprometimento e excelência técnica. Com forte presença nas áreas de Direito Civil, Direito de Família, Direito do Consumidor e, principalmente, Direito Médico e da Saúde, alia experiência prática à constante atualização jurídica.</p>
               <div id="destaques" class="destaques">
                   <a href="sobre.html#destaques" class="bloco">
                       <i class="fas fa-scale-balanced"></i>
@@ -55,7 +58,7 @@
       </div>
       <div class="imagem-perfil">
           <a href="https://flaviacoutinhoadvocacia.com.br" target="_blank">
-              <img src="images/flavia.jpg" alt="Flavia Coutinho" class="perfil">
+              <img src="images/flavia3.png" alt="Flavia Coutinho" class="perfil">
           </a>
           <div class="overlay-perfil"></div>
           <div class="perfil-text">
@@ -92,16 +95,15 @@
         <div class="area-item">
           <video muted loop playsinline class="area-video civil-video">
             <source src="videos/civil.mp4" type="video/mp4">
-            Your browser does not support the video tag.
+            Seu navegador não suporta o elemento de vídeo.
           </video>
           <div class="area-overlay"></div>
         </div>
         <div class="area-info civil-info">
           <div class="area-content">
             <i class="fas fa-file-contract"></i>
-      <h3>Direito Imobiliário</h3>
-      <p>Contratos, regularização imobiliária e proteção de posse.</p>
-            
+            <h3>Direito Imobiliário</h3>
+            <p>Contratos, regularização imobiliária e proteção de posse.</p>
           </div>
           <a href="areas.html#areas-destaque" class="ver-mais-btn">Veja Mais</a>
         </div>
@@ -110,15 +112,15 @@
         <div class="area-item">
           <video muted loop playsinline class="area-video family-video">
             <source src="videos/family.mp4" type="video/mp4">
-            Your browser does not support the video tag.
+            Seu navegador não suporta o elemento de vídeo.
           </video>
           <div class="area-overlay"></div>
         </div>
         <div class="area-info family-info">
           <div class="area-content">
             <i class="fas fa-ring"></i>
-      <h3>Direito de Família</h3>
-      <p>Divórcio, guarda e planejamento patrimonial familiar.</p>
+            <h3>Direito de Família</h3>
+            <p>Divórcio, guarda e planejamento patrimonial familiar.</p>
           </div>
           <a href="areas.html#areas-destaque" class="ver-mais-btn">Veja Mais</a>
         </div>
@@ -127,15 +129,15 @@
         <div class="area-item">
           <video muted loop playsinline class="area-video consumidor-video">
             <source src="videos/consumidor.mp4" type="video/mp4">
-            Your browser does not support the video tag.
+            Seu navegador não suporta o elemento de vídeo.
           </video>
           <div class="area-overlay"></div>
         </div>
         <div class="area-info consumidor-info">
           <div class="area-content">
             <i class="fas fa-user-shield"></i>
-      <h3>Direito do Consumidor</h3>
-      <p>Defesa contra abusos bancários e problemas aéreos.</p>
+            <h3>Direito do Consumidor</h3>
+            <p>Defesa contra abusos bancários e problemas aéreos.</p>
           </div>
           <a href="areas.html#areas-destaque" class="ver-mais-btn">Veja Mais</a>
         </div>
@@ -147,36 +149,35 @@
     <div class="declaracoes-container">
       <!-- Blocos de declarações -->
       <div id="blocos" class="blocos">
-        <div class="moldura">
-          
-            <div class="depoimento-header">
-              <div class="person">
-                <img id="avatar1" alt="Avatar de Pessoa 1" class="avatar">
+        <div class="moldura moldura-1">
+          <div class="depoimento-header">
+            <div class="person">
+              <img id="avatar1" alt="Avatar de Pessoa 1" class="avatar">
               <span id="nome1" class="personName">Pessoa 1</span>
-              </div>  
-              <span id="data1">01/01/2025</span>
-            </div>
-            <p id="texto1" class="texto">
-              <i class="fas fa-quote-left" style="color: #888; margin-right: 6px;"></i>
-              Declaração exemplo 1, primeira linha.<br>
-              Segunda linha do depoimento.
-              <i class="fas fa-quote-right" style="color: #888; margin-left: 6px;"></i>
-            </p>
-            
-          
+            </div>  
+            <span id="data1">01/01/2025</span>
+          </div>
+          <p id="texto1" class="texto">
+            <i class="fas fa-quote-left" style="color: #652728; margin-right: 6px;"></i>
+            Declaração exemplo 1, primeira linha.<br>
+            Segunda linha do depoimento.
+            <i class="fas fa-quote-right" style="color: #652728; margin-left: 6px;"></i>
+          </p>
         </div>
-        <div class="moldura">
-          
-            <div class="depoimento-header">
-              <div class="person">
-                <img id="avatar2" alt="Avatar de Pessoa 2" class="avatar">
-                <span id="nome2" class="personName">Pessoa 2</span>
-              </div>
-              
-              <span id="data2" class="data">02/01/2025</span>
+        <div class="moldura moldura-2">
+          <div class="depoimento-header">
+            <div class="person">
+              <img id="avatar2" alt="Avatar de Pessoa 2" class="avatar">
+              <span id="nome2" class="personName">Pessoa 2</span>
             </div>
-            <p id="texto2" class="texto">Declaração exemplo 2, primeira linha.<br>Outra linha do depoimento.</p>
-          
+            <span id="data2" class="data">02/01/2025</span>
+          </div>
+          <p id="texto2" class="texto">
+            <i class="fas fa-quote-left" style="color: #652728; margin-right: 6px;"></i>
+            Declaração exemplo 2, primeira linha.<br>
+            Outra linha do depoimento.
+            <i class="fas fa-quote-right" style="color: #652728; margin-left: 6px;"></i>
+          </p>
         </div>
       </div>
       <!-- Setas -->
@@ -218,90 +219,135 @@
       </footer>
       <script>
         document.addEventListener('DOMContentLoaded', function () {
-          const videos = {
-            'civil-info': document.querySelector('.civil-video'),
-            'family-info': document.querySelector('.family-video'),
-            'consumidor-info': document.querySelector('.consumidor-video')
-          };
-        
-          Object.keys(videos).forEach(infoClass => {
-            const infoElement = document.querySelector(`.${infoClass}`);
-            const video = videos[infoClass];
-        
-            if (infoElement && video) {
-              infoElement.addEventListener('mouseenter', () => {
-                video.play();
-              });
-              infoElement.addEventListener('mouseleave', () => {
-                video.pause();
-                video.currentTime = 0; // Optional: Reset video to start
-              });
-            }
-          });
-        });
-        const declaracoes = [
-        {
-    nome: "Karen Wetzl",
-    data: "02/05/2025",
-    texto: "Falar sobre a Flávia é fácil, uma profissional incrível que me ajudou muito em todos os processos, sempre atenta aos prazos, aos documentos, extremamente organizada, ágil, sempre disposta a resolver da melhor forma possível. O mais importante te dá uma visão real do tempo que as coisas levam para acontecer, te esclarece todas as dúvidas de forma clara e objetiva. É um imenso prazer contar com ela ao longo desses 10 anos.",
-    avatar: "images/karen.jpeg"
-  },
-        {
-    nome: "Célia Hueck",
-    data: "26/04/2025",
-    texto: "A Dra Flávia foi de grande competência e muito atenciosa durante todo o processo do inventário do meu pai. Fiquei muito satisfeita e recomendo seus serviços.",
-    avatar: "images/celia.jpg"
-  },
-  {
-    nome: "Maira Melo",
-    data: "20/04/2025",
-    texto: "Tive o prazer de trabalhar com a Flavia. Trata-se de uma profissional extremamente competente, focada, inteligente e tem um excelente relacionamento interpessoal com parceiros de trabalho e clientes. Profissional dinâmica, trabalha muito bem em equipe e esta sempre preparada para qualquer desafio devido sua bagagem de conhecimento em diversas áreas. Tenho uma imensa gratidão por te-la como colega de trabalho e por tudo o que ela conseguiu agregar. Em 2022, num momento difícil de nossas vidas, pudemos contar com a Dra. Flávia para conseguir o tratamento de câncer que foi negado pelo plano de saúde para minha mãe. Profissional humana, competente é extremamente ética, adotou todas os meios legais na condução do processo. Somos muito gratas.",
-    avatar: "images/mairaMelo.jpeg"
-  },
-  {
-    nome: "Daniel Barauna",
-    data: "31/01/2019",
-    texto: "Grande advogada, com quem tive o privilégio de trabalhar por vários anos, inclusive depois de me desligar do escritório. Muito perspicaz no desenvolvimento de teses e argumentações, com grande bagagem e conhecimento jurídico para enfrentamento dialético em contendas judiciais e extrajudiciais. Fácil relacionamento com colegas e clientes, além de uma aprimorada organização no monitoramento preventivo de processos.",
-    avatar: "images/danielBarauna.jpeg"
-  },
-];
+            const menuToggle = document.querySelector('.menu-toggle');
+            const navMenu = document.querySelector('.nav-menu');
+            
+            menuToggle.addEventListener('click', () => {
+                navMenu.classList.toggle('active');
+                const isActive = navMenu.classList.contains('active');
+                menuToggle.innerHTML = isActive ? '<i class="fas fa-times"></i>' : '<i class="fas fa-bars"></i>';
+            });
 
+            // Fechar o menu ao clicar em um link
+            const navLinks = document.querySelectorAll('.nav-menu a');
+            navLinks.forEach(link => {
+                link.addEventListener('click', () => {
+                    navMenu.classList.remove('active');
+                    menuToggle.innerHTML = '<i class="fas fa-bars"></i>';
+                });
+            });
+          });
+          document.addEventListener('DOMContentLoaded', function () {
+  // Script existente para vídeos
+  const videos = {
+    'civil-info': document.querySelector('.civil-video'),
+    'family-info': document.querySelector('.family-video'),
+    'consumidor-info': document.querySelector('.consumidor-video')
+  };
+
+  Object.keys(videos).forEach(infoClass => {
+    const infoElement = document.querySelector(`.${infoClass}`);
+    const video = videos[infoClass];
+
+    if (infoElement && video) {
+      // Forçar reprodução inicial em mobile
+      if (window.innerWidth <= 768) {
+        video.play().catch(error => {
+          console.log('Erro ao tentar reproduzir vídeo:', error);
+        });
+      }
+
+      infoElement.addEventListener('mouseenter', () => {
+        video.play();
+      });
+      infoElement.addEventListener('mouseleave', () => {
+        video.pause();
+        video.currentTime = 0;
+      });
+    }
+  });
+});
+const declaracoes = [
+    {
+      nome: "Karen Wetzl",
+      data: "02/05/2025",
+      texto: "Falar sobre a Flávia é fácil, uma profissional incrível que me ajudou muito em todos os processos, sempre atenta aos prazos, aos documentos, extremamente organizada, ágil, sempre disposta a resolver da melhor forma possível. O mais importante te dá uma visão real do tempo que as coisas levam para acontecer, te esclarece todas as dúvidas de forma clara e objetiva. É um imenso prazer contar com ela ao longo desses 10 anos.",
+      avatar: "images/karen.jpeg"
+    },
+    {
+      nome: "Célia Hueck",
+      data: "26/04/2025",
+      texto: "A Dra Flávia foi de grande competência e muito atenciosa durante todo o processo do inventário do meu pai. Fiquei muito satisfeita e recomendo seus serviços.",
+      avatar: "images/celia.jpg"
+    },
+    {
+      nome: "Maira Melo",
+      data: "20/04/2025",
+      texto: "Tive o prazer de trabalhar com a Flavia. Trata-se de uma profissional extremamente competente, focada, inteligente e tem um excelente relacionamento interpessoal com parceiros de trabalho e clientes. Profissional dinâmica, trabalha muito bem em equipe e esta sempre preparada para qualquer desafio devido sua bagagem de conhecimento em diversas áreas. Tenho uma imensa gratidão por te-la como colega de trabalho e por tudo o que ela conseguiu agregar. Em 2022, num momento difícil de nossas vidas, pudemos contar com a Dra. Flávia para conseguir o tratamento de câncer que foi negado pelo plano de saúde para minha mãe. Profissional humana, competente é extremamente ética, adotou todas os meios legais na condução do processo. Somos muito gratas.",
+      avatar: "images/mairaMelo.jpeg"
+    },
+    {
+      nome: "Daniel Barauna",
+      data: "31/01/2019",
+      texto: "Grande advogada, com quem tive o privilégio de trabalhar por vários anos, inclusive depois de me desligar do escritório. Muito perspicaz no desenvolvimento de teses e argumentações, com grande bagagem e conhecimento jurídico para enfrentamento dialético em contendas judiciais e extrajudiciais. Fácil relacionamento com colegas e clientes, além de uma aprimorada organização no monitoramento preventivo de processos.",
+      avatar: "images/danielBarauna.jpeg"
+    },
+  ];
 
   let indiceAtual = 0;
 
   function atualizarDeclaracoes() {
     const total = declaracoes.length;
-    const d1 = declaracoes[indiceAtual % total];
-    const d2 = declaracoes[(indiceAtual + 1) % total];
-    document.getElementById("avatar1").src = d1.avatar ?? "images/placeholder.png";
-    document.getElementById("nome1").innerText = d1.nome;
-    document.getElementById("data1").innerText = d1.data;
-    document.getElementById("texto1").innerHTML =
-  `<i class="fas fa-quote-left" style="color: #652728; margin-right: 6px;"></i>` +
-  d1.texto +
-  `<i class="fas fa-quote-right" style="color: #652728; margin-left: 6px;"></i>`;
+    const isMobile = window.innerWidth <= 768;
 
-  document.getElementById("avatar2").src = d2.avatar ?? "images/placeholder.png";
-    document.getElementById("nome2").innerText = d2.nome;
-    document.getElementById("data2").innerText = d2.data;
-    document.getElementById("texto2").innerHTML =
-  `<i class="fas fa-quote-left" style="color: #652728; margin-right: 6px;"></i>` +
-  d2.texto +
-  `<i class="fas fa-quote-right" style="color: #652728; margin-left: 6px;"></i>`;
+    if (isMobile) {
+      // Exibir apenas um depoimento em mobile
+      const d1 = declaracoes[indiceAtual % total];
+      document.getElementById("avatar1").src = d1.avatar ?? "images/placeholder.png";
+      document.getElementById("nome1").innerText = d1.nome;
+      document.getElementById("data1").innerText = d1.data;
+      document.getElementById("texto1").innerHTML =
+        `<i class="fas fa-quote-left" style="color: #652728; margin-right: 6px;"></i>` +
+        d1.texto +
+        `<i class="fas fa-quote-right" style="color: #652728; margin-left: 6px;"></i>`;
+    } else {
+      // Exibir dois depoimentos em desktop
+      const d1 = declaracoes[indiceAtual % total];
+      const d2 = declaracoes[(indiceAtual + 1) % total];
+      document.getElementById("avatar1").src = d1.avatar ?? "images/placeholder.png";
+      document.getElementById("nome1").innerText = d1.nome;
+      document.getElementById("data1").innerText = d1.data;
+      document.getElementById("texto1").innerHTML =
+        `<i class="fas fa-quote-left" style="color: #652728; margin-right: 6px;"></i>` +
+        d1.texto +
+        `<i class="fas fa-quote-right" style="color: #652728; margin-left: 6px;"></i>`;
+      document.getElementById("avatar2").src = d2.avatar ?? "images/placeholder.png";
+      document.getElementById("nome2").innerText = d2.nome;
+      document.getElementById("data2").innerText = d2.data;
+      document.getElementById("texto2").innerHTML =
+        `<i class="fas fa-quote-left" style="color: #652728; margin-right: 6px;"></i>` +
+        d2.texto +
+        `<i class="fas fa-quote-right" style="color: #652728; margin-left: 6px;"></i>`;
+    }
   }
 
   function avancarDeclaracoes() {
-    indiceAtual = (indiceAtual + 2) % declaracoes.length;
+    const isMobile = window.innerWidth <= 768;
+    indiceAtual = (indiceAtual + (isMobile ? 1 : 2)) % declaracoes.length;
     atualizarDeclaracoes();
   }
 
   function voltarDeclaracoes() {
-    indiceAtual = (indiceAtual - 2 + declaracoes.length) % declaracoes.length;
+    const isMobile = window.innerWidth <= 768;
+    indiceAtual = (indiceAtual - (isMobile ? 1 : 2) + declaracoes.length) % declaracoes.length;
     atualizarDeclaracoes();
   }
 
-  // Inicializa com as duas primeiras
+  // Inicializa os depoimentos
   atualizarDeclaracoes();
+
+  // Atualiza depoimentos ao redimensionar a janela
+  window.addEventListener('resize', atualizarDeclaracoes);
         </script>
   </body>
 </html>

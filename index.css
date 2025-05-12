@@ -11,10 +11,11 @@ body {
   color: #333;
   padding-top: 20vh;
 }
+
 body::before {
   content: '';
   position: absolute;
-  top: 0; /* Será definido via JavaScript */
+  top: 0;
   left: 0;
   width: 100%;
   height: 100%;
@@ -78,6 +79,25 @@ nav ul li a:hover::after {
   width: 100%;
 }
 
+.menu-toggle {
+  display: none;
+  background: none;
+  border: none;
+  font-size: 6vw;
+  color: #333;
+  cursor: pointer;
+  z-index: 1001;
+}
+
+.nav-menu {
+  transition: transform 0.3s ease;
+}
+
+.nav-menu.active {
+  transform: translateX(0);
+}
+
+/* Estilos para as demais seções (mantidos como no original) */
 .hero {
   position: relative;
   height: 70vh;
@@ -147,12 +167,18 @@ section {
 
 .sobre-conteudo p {
   font-size: 1.3vw;
+  text-align: center;
+}
+
+.sobre-conteudo .sobre-mim-text {
+  text-align: left;
 }
 
 .imagem-perfil {
   position: relative;
   flex: 1 1 85vw;
   display: flex;
+  border-radius: 4vw;
   justify-content: flex-end;
   z-index: 1;
 }
@@ -170,8 +196,8 @@ section {
   width: 100%;
   height: 100%;
   background-color: #652728;
-  opacity: 0.3;
-  border-radius: 1vw;
+  opacity: 0;
+  border-radius: 4vw;
   z-index: 1;
 }
 
@@ -186,7 +212,6 @@ section {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  
   text-align: center;
   padding: 1vw;
   border-bottom-left-radius: 1vw;
@@ -217,22 +242,22 @@ section {
 }
 
 .imagem-perfil:hover .perfil-text {
-  height: 100%; /* Expande para cima */
+  height: 100%;
   background-color: rgba(101, 39, 40, 0.5);
   border-radius: 1vw;
 }
 
 .imagem-perfil:hover .perfil-text-content {
-  transform: translateY(-2vh); /* Textos sobem */
+  transform: translateY(-2vh);
 }
 
 .imagem-perfil:hover .perfil-text h3,
 .imagem-perfil:hover .perfil-text p {
-  color: #fff; /* Textos brancos para legibilidade */
+  color: #fff;
 }
 
 .conhecer-btn {
-  position: relative; /* Para posicionar :before */
+  position: relative;
   font-size: 1.2vw;
   color: #fff;
   border: 2px solid #fff;
@@ -254,7 +279,7 @@ section {
   width: 0;
   height: 100%;
   background-color: #fff;
-  z-index: -1; /* Atrás do texto e seta */
+  z-index: -1;
   transition: width 0.3s ease;
 }
 
@@ -273,7 +298,7 @@ section {
 }
 
 .conhecer-btn:hover:before {
-  width: 100%; /* Preenche da esquerda para a direita */
+  width: 100%;
 }
 
 .conhecer-btn:hover i {
@@ -299,10 +324,10 @@ section {
   width: 13vw;
   box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
   transition: transform 0.3s ease, box-shadow 0.3s ease;
-  position: relative; /* Necessário para o pseudo-elemento */
-  text-decoration: none; /* Remove sublinhado padrão do link */
-  color: inherit; /* Mantém cores padrão do conteúdo */
-  overflow: hidden; /* Garante que o preenchimento não vaze */
+  position: relative;
+  text-decoration: none;
+  color: inherit;
+  overflow: hidden;
 }
 
 .sobre .bloco::before {
@@ -313,12 +338,12 @@ section {
   width: 0;
   height: 100%;
   background-color: #652728;
-  transition: width 0.5s ease; /* Animação de preenchimento */
-  z-index: -1; /* Coloca o preenchimento atrás do conteúdo */
+  transition: width 0.5s ease;
+  z-index: -1;
 }
 
 .sobre .bloco:hover::before {
-  width: 100%; /* Preenche completamente ao passar o mouse */
+  width: 100%;
 }
 
 .sobre .bloco:hover {
@@ -335,7 +360,6 @@ section {
 
 .sobre .bloco:hover p {
   color: #fff;
-  
 }
 
 .sobre .bloco:hover i {
@@ -359,7 +383,6 @@ section {
 }
 
 .areas h2 {
-
   padding-left: 10%;
   margin-bottom: 5vh;
   margin-top: 5vh;
@@ -385,7 +408,6 @@ section {
 
 .container-img {
   width: 100%;
-  
   height: 100%;
   display: block;
   object-fit: cover;
@@ -394,7 +416,6 @@ section {
 .image-overlay {
   position: absolute;
   top: 0;
-  
   left: 0;
   width: 100%;
   height: 100%;
@@ -429,12 +450,10 @@ section {
 .icons-container {
   display: flex;
   flex-direction: row;
-  
   align-items: center;
-  
 }
 
-.icons-container h2{
+.icons-container h2 {
   color: #652728;
   margin: 0;
   font-size: 2.8vw;
@@ -582,6 +601,7 @@ section {
 .area-info:hover .area-content {
   transform: translateY(-2vh);
 }
+
 .area-info:hover .area-overlay {
   opacity: 0.3;
 }
@@ -612,38 +632,19 @@ section {
   margin: 0 auto;
 }
 
-#data1 {
-  font-size: 1.5vw;
-}
-
-#data2 {
+#data1, #data2 {
   font-size: 1.5vw;
 }
 
 .texto {
   text-decoration: underline;
-  
   font-size: 1vw;
-}
-#texto1{
-  font-size: 1.5vw;
-}
-#texto2{
-  font-size: 1.5vw;
+  
 }
 
-.blocos {
-  display: flex;
-  gap: 2vw;
-  flex: 1;
-  overflow: hidden;
-}
-
-.declaracoes-container {
-  display: flex;
-  align-items: center;
-  gap: 2vw;
-  margin: 0 auto;
+#texto1, #texto2 {
+  font-size: 1.5vw;
+  text-align: justify;
 }
 
 .blocos {
@@ -668,11 +669,10 @@ section {
 
 .depoimento {
   position: relative;
-  z-index: 2; /* Garante que o depoimento fique acima da moldura */
- width: 100%;
- 
- height: 100%;
- padding: 1.2vw;
+  z-index: 2;
+  width: 100%;
+  height: 100%;
+  padding: 1.2vw;
   flex: 1;
   box-shadow: inset 0 0 5px rgba(0, 0, 0, 0.1);
   transition: transform 0.3s ease;
@@ -686,14 +686,11 @@ section {
   object-fit: cover;
   margin-right: 0.1vw;
 }
-#nome1{
+
+#nome1, #nome2 {
   font-size: 2vw;
   font-family: 'Times New Roman', Times, serif;
 }
-#nome2{
-  font-size: 2vw;
-  font-family: 'Times New Roman', Times, serif;
-} 
 
 .depoimento-header {
   display: flex;
@@ -704,6 +701,7 @@ section {
   margin-bottom: 2vh;
   gap: 0.5vw;
 }
+
 .person {
   display: flex;
   gap: 1vw;
@@ -717,19 +715,16 @@ section {
 .depoimento p {
   font-size: 1.1rem;
   color: #000;
-  
   line-height: 1.6;
   font-weight: 500;
   margin: 0;
-  
 }
 
 .linha-texto {
   display: block;
-  border-bottom: 1px solid #999; /* Linha mais escura para contraste */
-  padding-bottom: 0.3rem; /* Espaçamento entre texto e linha */
-  margin-bottom: 0.4rem; /* Espaçamento entre linhas */
-  
+  border-bottom: 1px solid #999;
+  padding-bottom: 0.3rem;
+  margin-bottom: 0.4rem;
   font-size: 1.1rem;
 }
 
@@ -833,5 +828,447 @@ footer p {
 }
 
 .mencao {
-  font-size: 1.2vw; opacity: 0.6;
+  font-size: 1.2vw;
+  opacity: 0.6;
+}
+
+/* Media Queries para Responsividade */
+@media (max-width: 768px) {
+
+  body {
+    font-family: 'Poppins', sans-serif;
+    background-color: #652728;
+    color: #333;
+    padding-top: 10vh;
+  }
+
+  body::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 0%;
+    height: 0%;
+    top: var(--background-top, 40%);
+    background-color: #fff;
+    z-index: -1;
+  }
+
+  header {
+    height: auto;
+    padding: 10px 5%;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .logo {
+    height: 10vh;
+  }
+
+  .menu-toggle {
+    display: block;
+  }
+
+  .nav-menu {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    background-color: rgba(101, 39, 40, 0.9);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transform: translateX(100%);
+    z-index: 1000;
+  }
+
+  .nav-menu.active {
+    transform: translateX(0);
+  }
+
+  nav ul {
+    flex-direction: column;
+    gap: 5vh;
+    text-align: center;
+  }
+
+  nav ul li a {
+    font-size: 6vw;
+    color: #fff;
+    padding: 2vh 0;
+  }
+
+  nav ul li a::after {
+    background-color: #fff;
+  }
+
+  nav ul li a:hover {
+    color: #fff;
+    transform: scale(1.1);
+  }
+
+  .hero {
+    height: 60vh;
+  }
+
+  .hero h1 {
+    font-size: 10vw;
+  }
+
+  .hero p {
+    font-size: 5vw;
+  }
+
+  .areas, .sobre, .contato {
+    padding-top: 5vh;
+    margin-top: 0;
+  }
+
+  .areas {
+    z-index: 2;
+    padding: 0vh 0% 15vh 0%;
+    background-color: #652728;
+    color: #fff;
+  }
+
+  .sobre {
+    flex-direction: column;
+    background-color: #fff;
+    gap: 20px;
+  }
+
+  .sobre-conteudo .sobre-mim-text {
+    text-align: justify;
+  }
+  
+
+  .sobre-conteudo {
+    flex: 1 1 100%;
+  }
+
+  .imagem-perfil {
+    flex: 1 1 100%;
+    border-radius: 4vw;
+    justify-content: center;
+  }
+  .sobre .perfil {
+    border-radius: 4vw;
+  }
+
+  .sobre .bloco {
+    width: 40%;
+    border-radius: 4vw;
+    display: none;
+    margin: 10px auto;
+    background-color: #652728;
+  }
+
+  .sobre-conteudo p {
+    font-size: 4vw;
+  }
+
+  .sobre .bloco p {
+    font-size: 4vw;
+    color: #fff;
+  }
+
+  .sobre .bloco i {
+    font-size: 8vw;
+    color: #fff;
+  }
+
+  .perfil-text {
+    height: 100%;
+    background-color: rgba(101, 39, 40, 0.5);
+    border-radius: 4vw;
+  }
+  
+  .perfil-text-content {
+    transform: translateY(-2vh);
+  }
+  
+  .perfil-text h3,
+  .perfil-text p {
+    color: #fff;
+  }
+  
+  .conhecer-btn {
+    position: relative;
+    font-size: 4vw;
+    color: #fff;
+    border: 2px solid #fff;
+    padding: 1vw 2vw;
+    text-decoration: none;
+    font-weight: 600;
+    cursor: pointer;
+    opacity: 0;
+    transform: translateY(2vw);
+    overflow: hidden;
+    transition: opacity 0.3s ease, transform 0.3s ease, max-height 0.3s ease, color 0.3s ease;
+  }
+  
+  .conhecer-btn:before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 0;
+    height: 100%;
+    background-color: #fff;
+    z-index: -1;
+    transition: width 0.3s ease;
+  }
+  
+  .conhecer-btn {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  .perfil-text h3 {
+    font-size: 6vw;
+    color: #fff;
+  }
+
+  .perfil-text p {
+    font-size: 4vw;
+    color: #fff;
+  }
+
+  .conhecer-btn {
+    font-size: 4vw;
+  }
+
+  .conhecer-btn i {
+    font-size: 4vw;
+  }
+
+  .areas h2, .sobre h2, .contato h2, .declaracoes h2 {
+    font-size: 8vw;
+    text-align: center;
+  }
+  .areas h2{
+    padding-left: 0;
+  }
+
+  .container {
+    flex-direction: column-reverse;
+    margin-left: 0;
+    
+    border-radius: 10vw;
+  }
+
+  .image-wrapper {
+    flex: 1 1 100%;
+  }
+
+  .content-right {
+    padding: 10%;
+  }
+
+  .icons-container h2 {
+    font-size: 6vw;
+    text-align: center;
+    margin: auto;
+  }
+
+  .icon-circle {
+    width: 10vw;
+    height: 10vw;
+  }
+
+  .health-icon {
+    font-size: 6vw;
+  }
+
+  .content-right p {
+    font-size: 4vw;
+    text-align: justify;
+  }
+
+  .ver-mais-btn {
+    font-size: 4vw;
+    padding: 2vw 3vw;
+    border-radius: 2vw;
+    margin: auto;
+  }
+
+  .areas-grid {
+    flex-direction: column;
+    gap: 20vw; /* Aumentado para garantir espaço entre os itens */
+    margin: 10vh 5% 0 5%;
+  }
+
+  .area-wrapper {
+    flex: none;
+    height: auto; /* Altura automática para conter vídeo e info */
+    min-height: 50vh; /* Aumentado para garantir espaço */
+    display: flex;
+    flex-direction: column;
+    gap: 5vw; /* Espaço interno entre vídeo e info */
+  }
+
+  .area-item {
+    height: 40vh; /* Altura fixa para o vídeo */
+    position: relative;
+    overflow: hidden;
+    border-radius: 3vw; /* Ajustado para mobile */
+  }
+
+  .area-video {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 0;
+    display: block;
+  }
+
+  .area-overlay {
+    width: 100%;
+    height: 100%;
+    opacity: 0.6;
+    z-index: 1;
+    border-radius: 3vw; /* Consistência com area-item */
+  }
+
+  .area-info {
+    position: relative;
+    width: 80%;
+    height: auto;
+    left: auto;
+    
+    transform: none;
+    padding: 5vw;
+    margin: 0 auto;
+    border-radius: 3vw; /* Ajustado para mobile */
+    margin-top: -35vh;
+  }
+
+  .area-info h3 {
+    font-size: 5vw;
+  }
+
+  .area-info p {
+    font-size: 3.5vw;
+    margin-bottom: 3vh;
+  }
+
+  .area-info i {
+    font-size: 7vw;
+  }
+
+  .area-info .ver-mais-btn {
+    font-size: 4vw;
+    padding: 2vw 3vw;
+    opacity: 1;
+    border-radius: 2vw;
+    transform: translateY(0);
+  }
+
+  .blocos {
+    flex-direction: column;
+    gap: 20px;
+  }
+
+  .declaracoes {
+    padding: 5vh 5% 0 5%;
+    margin-top: -10vh;
+  }
+
+  .declaracoes-container {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .blocos {
+    flex-direction: column;
+    gap: 5vw;
+    width: 90%;
+  }
+
+  .moldura {
+    width: 100%;
+    padding: 5vw;
+    border-radius: 3vw;
+  }
+
+  .moldura-2 {
+    display: none; /* Oculta o segundo depoimento em mobile */
+  }
+
+  .avatar {
+    width: 10vw;
+    height: 10vw;
+    margin-right: 1vw;
+  }
+
+  #nome1, #nome2 {
+    font-size: 6vw;
+  }
+
+  #data1, #data2 {
+    font-size: 4vw;
+  }
+
+  #texto1, #texto2 {
+    font-size: 4vw;
+  }
+
+  .depoimento p {
+    font-size: 3vw;
+  }
+
+  .navegacao {
+    flex-direction: row;
+    gap: 5vw;
+    margin-top: 5vw;
+    margin-bottom: 5vh;
+  }
+
+  .navegacao button {
+    width: 10vw;
+    height: 10vw;
+    font-size: 4vw;
+  }
+  .navegacao button:hover {
+    background: #fff;
+    color: #000;
+  }
+
+  .contato-info {
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+  }
+
+  .contato-item {
+    max-width: 100%;
+  }
+
+  .contato h2 {
+    font-size: 6vw;
+  }
+
+  .contato .oab {
+    font-size: 5vw;
+  }
+
+  .contato-item i {
+    font-size: 6vw;
+  }
+
+  .contato-item p {
+    font-size: 3.5vw;
+  }
+
+  footer p {
+    font-size: 4vw;
+  }
+
+  .mencao {
+    font-size: 3vw;
+  }
 }

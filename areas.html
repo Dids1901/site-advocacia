@@ -17,7 +17,10 @@
 <body id="site-body">
     <header>
       <img src="images/logo.png" alt="Logo Escritório" class="logo">
-      <nav>
+      <button class="menu-toggle" aria-label="Toggle Menu">
+        <i class="fas fa-bars"></i>
+    </button>
+      <nav class="nav-menu">
         <ul>
           <li><a href="index.html">Home</a></li>
           <li><a href="sobre.html">Sobre</a></li>
@@ -42,7 +45,7 @@
             <p>Atuação destacada em ações contra operadoras de planos de saúde, com ênfase na defesa dos direitos de consumidores diante de negativas indevidas de cobertura, fornecimento de medicamentos (inclusive off-label ou de alto custo), internações domiciliares (home care), cirurgias, dentre estas, cirurgias plásticas reparadoras, exames, terapias, tratamentos continuados e especializados. 
                 Contestação de reajustes abusivos, tanto por faixa etária quanto por sinistralidade, além da revisão de cláusulas contratuais abusivas. Defesa técnica com base em normas da ANS, Código de Defesa do Consumidor e jurisprudência atualizada dos tribunais.
                 </p>
-            <div class="trabalhe-comigo">Entre em Contato <i class="fas fa-arrow-right"></i></div>
+                <a href="contato.html" target="_blank" class="trabalhe-comigo">Entre em Contato <i class="fas fa-arrow-right"></i></a>
         </div>
     </section>
 
@@ -83,19 +86,19 @@
             <img src="images/direitoCivil.webp" alt="Direito Civil">
             <div class="overlay"></div>
             <p>Bem de família, cuidados na compra de imóveis, locação, regularização imobiliária, usucapião, direito de vizinhança, posse e propriedade.</p>
-            <div class="trabalhe-comigo">Entre em Contato <i class="fas fa-arrow-right"></i></div>
+            <a href="contato.html" target="_blank" class="trabalhe-comigo">Entre em Contato <i class="fas fa-arrow-right"></i></a>
           </div>
           <div class="imagem-modelo modelo-2">
             <img src="images/direitoFamilia.webp" alt="Direito de Família">
             <div class="overlay"></div>
             <p>Assessoramento e planejamento na gestão de patrimônios familiares; Consultoria especializada na condução de conflitos; Pacto antenupcial, regimes de casamento e pacto de convivência; Atendimento humanizado em ações de divórcio, guarda, alimentos, regulamentação de visitas, interdições, curatela, reconhecimento e dissolução de união estável, investigação de paternidade, inventários, partilhas e procedimentos afins.</p>
-            <div class="trabalhe-comigo">Entre em Contato <i class="fas fa-arrow-right"></i></div>
+            <a href="contato.html" target="_blank" class="trabalhe-comigo">Entre em Contato <i class="fas fa-arrow-right"></i></a>
           </div>
           <div class="imagem-modelo modelo-3">
             <img src="images/direitoConsumidor.jpg" alt="Direito do Consumidor">
             <div class="overlay"></div>
             <p>Defesa contra práticas abusivas, enganosas ou prejudiciais, seja por parte de Bancos (negativações indevidas, reparação em geral, superendividamento, golpes digitais), Agências de Turismo (atraso de vôo, cancelamento de vôo, extravio de bagagem, overbooking), Operadoras de Plano de Saúde (melhor abordada em tópico próprio).</p>
-            <div class="trabalhe-comigo">Entre em Contato <i class="fas fa-arrow-right"></i></div>
+            <a href="contato.html" target="_blank" class="trabalhe-comigo">Entre em Contato <i class="fas fa-arrow-right"></i></a>
           </div>
         </div>
         <!-- Direita: Ícones e Textos -->
@@ -146,6 +149,118 @@
         <p>&copy; 2025 Flavia Coutinho - Todos os direitos reservados.</p>
         <p class="mencao">Uma produção de <a href="https://dids1901.github.io" target="_blank" style="color: #f0f0f0;">Diogo Coutinho</a></p>
       </footer>
-      
+      <script>
+        document.addEventListener('DOMContentLoaded', function () {
+          const menuToggle = document.querySelector('.menu-toggle');
+          const navMenu = document.querySelector('.nav-menu');
+          
+          menuToggle.addEventListener('click', () => {
+              navMenu.classList.toggle('active');
+              const isActive = navMenu.classList.contains('active');
+              menuToggle.innerHTML = isActive ? '<i class="fas fa-times"></i>' : '<i class="fas fa-bars"></i>';
+          });
+
+          // Fechar o menu ao clicar em um link
+          const navLinks = document.querySelectorAll('.nav-menu a');
+          navLinks.forEach(link => {
+              link.addEventListener('click', () => {
+                  navMenu.classList.remove('active');
+                  menuToggle.innerHTML = '<i class="fas fa-bars"></i>';
+              });
+          });
+        });
+        document.addEventListener('DOMContentLoaded', () => {
+  // Manipulação de cliques nos blocos para rolagem suave
+  document.querySelectorAll('.bloco').forEach(bloco => {
+      bloco.addEventListener('click', (e) => {
+          e.preventDefault(); // Impede o comportamento padrão do link
+          const href = bloco.getAttribute('href');
+          const [page, hash] = href.split('#');
+          
+          // Se estamos na mesma página (sobre.html) e há um hash
+          if (window.location.pathname.includes(page) && hash) {
+              const target = document.querySelector(`#${hash}`);
+              if (target) {
+                  target.scrollIntoView({ behavior: 'smooth' });
+              }
+          } else {
+              // Redireciona para a página com o hash
+              window.location.href = href;
+          }
+      });
+  });
+});
+
+document.addEventListener('DOMContentLoaded', () => {
+  const modelos = ['modelo-1', 'modelo-2', 'modelo-3'];
+  const barras = ['bar-1', 'bar-2', 'bar-3'];
+  let currentIndex = 0;
+
+  const updateModel = (index = null) => {
+    if (index !== null) {
+      currentIndex = index;
+    }
+
+    // Remove active and paused classes from all elements
+    document.querySelectorAll('.icone-texto').forEach(el => el.classList.remove('active'));
+    document.querySelectorAll('.imagem-modelo').forEach(el => el.classList.remove('active'));
+    document.querySelectorAll('.progress-bar').forEach(el => {
+      el.classList.remove('active', 'paused');
+      // Reset animation by removing and re-adding the element's style
+      const beforeStyle = el.style.animation;
+      el.style.animation = 'none';
+      el.offsetHeight; // Trigger reflow to reset animation
+      el.style.animation = beforeStyle;
+    });
+    document.querySelectorAll('.titulo-item').forEach(el => el.classList.remove('active'));
+
+    // Add active class to current model, bar, and title
+    document.querySelectorAll(`.icone-texto.${modelos[currentIndex]}`).forEach(el => el.classList.add('active'));
+    document.querySelector(`.imagem-modelo.${modelos[currentIndex]}`).classList.add('active');
+    const activeBar = document.querySelector(`.progress-bar.${barras[currentIndex]}`);
+    activeBar.classList.add('active');
+    const tituloItems = document.querySelectorAll('.titulo-item');
+    if (tituloItems[currentIndex]) {
+      tituloItems[currentIndex].classList.add('active');
+    } else {
+      console.error(`Erro: .titulo-item na posição ${currentIndex} não encontrado`);
+    }
+
+    // Set up animationend listener for the active progress bar
+    const nextIndex = (currentIndex + 1) % modelos.length;
+    activeBar.addEventListener('animationend', () => {
+      if (activeBar.classList.contains('active') && !activeBar.classList.contains('paused')) {
+        updateModel(nextIndex);
+      }
+    }, { once: true });
+  };
+
+  // Initialize carousel
+  updateModel();
+
+  // Add click handlers for titles
+  document.querySelectorAll('.titulo-item').forEach((titulo, index) => {
+    titulo.addEventListener('click', () => {
+      updateModel(index);
+    });
+  });
+
+  // Add hover handlers to pause/resume animation
+  document.querySelectorAll('.imagem-modelo').forEach(imagem => {
+    imagem.addEventListener('mouseenter', () => {
+      const activeBar = document.querySelector('.progress-bar.active');
+      if (activeBar) {
+        activeBar.classList.add('paused');
+      }
+    });
+    imagem.addEventListener('mouseleave', () => {
+      const activeBar = document.querySelector('.progress-bar.active');
+      if (activeBar) {
+        activeBar.classList.remove('paused');
+      }
+    });
+  });
+});
+      </script>
 </body>
 </html>
